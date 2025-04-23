@@ -48,7 +48,7 @@
                         </a>
                     </div>
                     <div class="logo-box">
-                        <a href="<?php echo site_url('backend/dashboard');?>" class="logo-text"><span>MBLOG</span></a>
+                        <a href="<?php echo site_url('backend/dashboard');?>" class="logo-text"><span>SIBUKUR</span></a>
                     </div><!-- Logo Box -->
                     <div class="search-button">
                         <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
@@ -307,7 +307,7 @@
                     </div><!-- Row -->
                 </div><!-- Main Wrapper -->
                 <div class="page-footer">
-                    <p class="no-s"><?php echo date('Y');?> &copy; Powered by M Fikri Setiadi.</p>
+                    <p class="no-s"><?php echo date('Y');?> &copy; Powered by Multi Kreatif Indonesia.</p>
                 </div>
             </div><!-- Page Inner -->
         </main><!-- Page Content -->
