@@ -276,7 +276,7 @@
                     </div>
                 </div><!-- Main Wrapper -->
                 <div class="page-footer">
-                    <p class="no-s"><?php echo date('Y');?> &copy; Powered by Multi Kreatif Indonesia.</p>
+                    <p class="no-s"><?php echo date('Y');?> &copy; Sistem Informasi Kampung Pegat Bukur Powered by MKI.</p>
                 </div>
             </div><!-- Page Inner -->
         </main><!-- Page Content -->
