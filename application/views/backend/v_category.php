@@ -258,8 +258,10 @@
                                                     <td><?php echo $row->category_name;?></td>
                                                     <td><?php echo $row->category_slug;?></td>
                                                     <td style="text-align: center;">
-                                                        <a href="javascript:void(0);" class="btn btn-xs btn-edit" data-id="<?php echo $row->category_id;?>" data-category="<?php echo $row->category_name;?>"><span class="fa fa-pencil"></span></a>
-                                                        <a href="javascript:void(0);" class="btn btn-xs btn-delete" data-id="<?php echo $row->category_id;?>"><span class="fa fa-trash"></span></a>
+                                                        <?php if ($row->category_id != 1): ?>
+                                                            <a href="javascript:void(0);" class="btn btn-xs btn-edit" data-id="<?php echo $row->category_id;?>" data-category="<?php echo $row->category_name;?>"><span class="fa fa-pencil"></span></a>
+                                                            <a href="javascript:void(0);" class="btn btn-xs btn-delete" data-id="<?php echo $row->category_id;?>"><span class="fa fa-trash"></span></a>
+                                                        <?php endif ?>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
