@@ -10,7 +10,7 @@
         <meta name="keywords" content="" />
         <meta name="author" content="M Fikri Setiadi" />
         <meta name="robots" content="noindex, nofollow">
-        <link rel="shortcut icon" href="<?php echo base_url().'assets/images/favicon.png'?>">
+        <link rel="shortcut icon" href="<?php echo base_url().'assets/images/favicon-new.png'?>">
         <!-- Styles -->
         <link href="<?php echo base_url().'assets/plugins/pace-master/themes/blue/pace-theme-flash.css'?>" rel="stylesheet"/>
         <link href="<?php echo base_url().'assets/plugins/uniform/css/uniform.default.min.css'?>" rel="stylesheet"/>
