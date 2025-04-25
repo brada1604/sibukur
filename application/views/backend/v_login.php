@@ -52,7 +52,7 @@
                                     <button type="submit" class="btn btn-success btn-block">Login</button>
                                     
                                 </form>
-                                <p class="text-center m-t-xs text-sm"><?php echo date('Y');?> &copy; Mblog by M Fikri.</p>
+                                <p class="text-center m-t-xs text-sm"><?php echo date('Y');?> &copy; Sistem Informasi Kampung Pegat Bukur.</p>
                             </div>
                         </div>
                     </div><!-- Row -->
