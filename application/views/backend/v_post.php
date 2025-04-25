@@ -259,9 +259,16 @@
                                                     <td><?php echo $no;?></td>
                                                     <td><?php echo $row->post_title;?></td>
                                                     <td><?php echo $row->post_date;?></td>
-                                                    <td><?php echo $row->category_name;?></td>
+                                                    <td>
+                                                        <?php if ($row->category_id == 1): ?>
+                                                            <span class="badge badge-info"><?php echo $row->category_name;?></span>
+                                                        <?php else : ?>
+                                                            <?php echo $row->category_name;?>
+                                                        <?php endif ?>
+                                                    </td>
                                                     <td><?php echo $row->post_views;?></td>
                                                     <td style="text-align: center;">
+                                                        <a href="<?php echo base_url('blog/'.$row->post_slug);?>" class="btn btn-xs" target="_blank"><span class="fa fa-globe"></span></a>
                                                         <a href="<?php echo site_url('backend/post/get_edit/'.$row->post_id);?>" class="btn btn-xs"><span class="fa fa-pencil"></span></a>
                                                         <a href="javascript:void(0);" class="btn btn-xs btn-delete" data-id="<?php echo $row->post_id;?>"><span class="fa fa-trash"></span></a>
                                                     </td>

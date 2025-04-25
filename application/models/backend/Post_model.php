@@ -3,7 +3,7 @@ class Post_model extends CI_Model{
 
 	//BACKEND
 	function get_all_post(){
-		$result = $this->db->query("SELECT post_id,post_title,post_image,DATE_FORMAT(post_date,'%d %M %Y') AS post_date,category_name,post_tags,post_status,post_views FROM tbl_post JOIN tbl_category ON post_category_id=category_id");
+		$result = $this->db->query("SELECT post_id,post_title, post_slug,post_image,DATE_FORMAT(post_date,'%d %M %Y') AS post_date,category_id, category_name,post_tags,post_status,post_views FROM tbl_post JOIN tbl_category ON post_category_id=category_id");
 		return $result;
 	}
 
