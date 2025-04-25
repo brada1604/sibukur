@@ -34,7 +34,8 @@ class Home extends CI_Controller {
 		$data['icon'] = $site_info->site_favicon;
 		$data['header'] = $this->load->view('header',$v,TRUE);
 		$data['footer'] = $this->load->view('footer','',TRUE);
-		$this->load->view('home_view',$data);
+		// $this->load->view('home_view',$data);
+		$this->load->view('frontend/landing-page',$data);
 	}
 
 	
