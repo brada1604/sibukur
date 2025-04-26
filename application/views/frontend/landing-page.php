@@ -62,7 +62,7 @@
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Informasi</a>
                                     <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="berita.html" class="dropdown-item">Berita Kampung</a>
+                                        <a href="<?php echo site_url('blog');?>" class="dropdown-item">Berita Kampung</a>
                                         <a href="lampiran.html" class="dropdown-item">Lampiran</a>
                                     </div>
                                 </div>
