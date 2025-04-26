@@ -8,6 +8,8 @@ class Blog extends CI_Controller {
 		$this->load->model('Visitor_model','visitor_model');
 		$this->load->model('Home_model','home_model');
 		$this->load->model('Site_model','site_model');
+		$this->load->model('Category_model','category_model');
+		$this->load->model('Tag_model','tag_model');
         $this->visitor_model->count_visitor();
         $this->load->helper('text');
         error_reporting(0);
@@ -83,6 +85,9 @@ class Blog extends CI_Controller {
 	    $this->pagination->initialize($config);
 	    $x['page'] =$this->pagination->create_links();
 		$x['data']=$this->blog_model->get_blog_perpage($offset,$limit);
+		$x['data_last_post']=$this->blog_model->get_last_post();
+		$x['data_all_categories_by_name']=$this->category_model->get_all_categories_by_name();
+		$x['data_all_tags_by_name']=$this->tag_model->get_all_tags_by_name();
 		//print_r($this->db->last_query()); 
 		$x['judul']="Berita Kampung Pegat Bukur";
 		if(empty($this->uri->segment(3))){

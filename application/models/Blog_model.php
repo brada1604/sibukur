@@ -36,6 +36,15 @@ class Blog_model extends CI_Model{
 		return $query;
 	}
 
+	function get_last_post(){
+		$this->db->select('tbl_post.*');
+		$this->db->from('tbl_post');
+		$this->db->order_by('post_id', 'DESC');
+		$this->db->limit(1);
+		$query = $this->db->get();
+		return $query;
+	}
+
 	function get_related_post($category_id,$kode){
 		$query = $this->db->query("SELECT * FROM tbl_post LEFT JOIN tbl_user ON post_user_id=user_id 
 			WHERE post_category_id='$category_id' AND NOT post_id='$kode' ORDER BY post_views DESC LIMIT 2");

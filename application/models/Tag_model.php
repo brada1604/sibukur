@@ -15,4 +15,12 @@ class Tag_model extends CI_Model{
 			WHERE post_tags LIKE '%$tag%' LIMIT $offset,$limit");
 		return $query;
 	}
+
+	function get_all_tags_by_name(){
+		$this->db->select('tbl_tags.*');
+		$this->db->from('tbl_tags');
+		$this->db->order_by('tag_name', 'ASC');
+		$query = $this->db->get();
+		return $query;
+	}
 }

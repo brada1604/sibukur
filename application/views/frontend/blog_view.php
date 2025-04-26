@@ -164,7 +164,7 @@
                                     	echo strlen($desc) > 100 ? substr($desc, 0, 100) . '...' : $desc;
                                     	?>
                                     </p>
-                                    <a class="text-uppercase" href="<?php echo site_url('blog/'.$row->post_slug);?>">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                                    <a class="text-uppercase" href="<?php echo site_url('blog/'.$row->post_slug);?>" target="_blank">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -287,10 +287,9 @@
                             <h3 class="mb-0">Kategori</h3>
                         </div>
                         <div class="link-animated d-flex flex-column justify-content-start">
-                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Wisata</a>
-                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Ekonomi Lokal</a>
-                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Acara Budaya</a>
-                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Pengembangan Komunitas</a>
+                        	<?php foreach ($data_all_categories_by_name->result() as $row2):?>
+                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="<?php echo site_url('category/'.$row2->category_slug);?>"><i class="bi bi-arrow-right me-2"></i><?php echo $row2->category_name;?></a>
+                        	<?php endforeach;?>
                         </div>
                     </div>
                     <!-- Kategori End -->
@@ -300,10 +299,12 @@
                         <div class="section-title section-title-sm position-relative pb-3 mb-4">
                             <h3 class="mb-0">Postingan Terbaru</h3>
                         </div>
+                        <?php foreach ($data_last_post->result() as $row1):?>
                         <div class="d-flex rounded overflow-hidden mb-3">
-                            <img class="img-fluid" src="<?php echo base_url()?>assets/depan/img/blog-1.jpg" style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Menjelajahi Tempat Wisata Tersembunyi di Pegat Bukur</a>
+                            <img class="img-fluid" src="<?php echo base_url().'assets/images/thumb/'.$row1->post_image;?>" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="<?php echo site_url('blog/'.$row1->post_slug);?>" target="_blank" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0"><?php echo $row1->post_title;?></a>
                         </div>
+                        <?php endforeach;?>
                         <!-- Ulangi untuk posting lainnya -->
                     </div>
                     <!-- Postingan Terbaru End -->
@@ -314,10 +315,9 @@
                             <h3 class="mb-0">Tag</h3>
                         </div>
                         <div class="d-flex flex-wrap">
-                            <a href="#" class="btn btn-sm btn-outline-primary m-1">Pegat Bukur</a>
-                            <a href="#" class="btn btn-sm btn-outline-primary m-1">Wisata</a>
-                            <a href="#" class="btn btn-sm btn-outline-primary m-1">Acara Budaya</a>
-                            <a href="#" class="btn btn-sm btn-outline-primary m-1">Produk Lokal</a>
+                        	<?php foreach ($data_all_tags_by_name->result() as $row3):?>
+                        	<a href="<?php echo site_url('tag/'.$row3->tag_name);?>" target="_blank" class="btn btn-sm btn-outline-primary m-1"><?php echo $row3->tag_name;?></a>
+                        	<?php endforeach;?>
                         </div>
                     </div>
                     <!-- Tag End -->

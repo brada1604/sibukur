@@ -16,4 +16,12 @@ class Category_model extends CI_Model{
 			WHERE category_id='$category_id' LIMIT $offset,$limit");
 		return $query;
 	}
+
+	function get_all_categories_by_name(){
+		$this->db->select('tbl_category.*');
+		$this->db->from('tbl_category');
+		$this->db->order_by('category_name', 'ASC');
+		$query = $this->db->get();
+		return $query;
+	}
 }
