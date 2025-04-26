@@ -85,7 +85,21 @@
             <div class="col-md-6 p-3 d-flex align-items-center">
                 <div class="w-100">
                     <div id="header-texts">
-                        <div class="header-text owl-carousel-item" data-text-index="0">
+                        <?php $no1 = -1;?>
+                        <?php foreach($latest_post->result() as $row1):?>
+                        <div class="header-text owl-carousel-item" data-text-index="<?php echo $no1++;?>">
+                            <h1 class="display-6 fw-bold mb-4"><?php echo $row1->post_title;?></h1>
+                            <p class="mb-4">
+                            <?php 
+                                $desc = $row1->post_description;
+                                echo strlen($desc) > 100 ? substr($desc, 0, 100) . '...' : $desc;
+                            ?>
+                            </p>
+                            <a href="<?php echo site_url('blog/'.$row1->post_slug);?>" target="_blank" class="btn btn-primary py-2 px-4 rounded">Selengkapnya ></a>
+                        </div>
+                        <?php endforeach;?>
+
+                        <!-- <div class="header-text owl-carousel-item" data-text-index="0">
                             <h1 class="display-6 fw-bold mb-4">Penilaian Lomba Kebersihan Lingkungan</h1>
                             <p class="mb-4">Sukan Tengah, 13 Desember 2024 — Dalam rangka merayakan hari jadi Kampung Sukan Tengah ke-215 serta Hari Bhakti Transmigrasi ke-72, Pemerintah Kampung bersama panitia mengadakan penilaian lomba kebersihan lingkungan.</p>
                             <a href="#" class="btn btn-primary py-2 px-4 rounded">Selengkapnya ></a>
@@ -94,7 +108,7 @@
                             <h1 class="display-6 fw-bold mb-4">Kunjungan Dinas PUPR Kabupaten Berau</h1>
                             <p class="mb-4">Dinas PUPR Kabupaten Berau mengunjungi lokasi PAM Kampung Inaran untuk meninjau lokasi pelatihan KP-SPAM Mandiri. Bumk Inaran juga diundang sebagai narasumber pada kegiatan tersebut.</p>
                             <a href="#" class="btn btn-primary py-2 px-4 rounded">Selengkapnya ></a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -102,12 +116,19 @@
             <!-- GAMBAR KANAN -->
             <div class="col-md-6">
                 <div class="owl-carousel header-carousel">
-                    <div class="owl-carousel-item" data-text-index="0">
+                    <?php $no2 = -1;?>
+                    <?php foreach($latest_post->result() as $row2):?>
+                    <div class="owl-carousel-item" data-text-index="<?php echo $no2++;?>">
+                        <img class="img-fluid w-100 h-100 object-fit-cover" src="<?php echo base_url().'assets/images/thumb/'.$row2->post_image?>" alt="<?php echo $row2->post_title;?>">
+                    </div>
+                    <?php endforeach;?>
+
+                    <!-- <div class="owl-carousel-item" data-text-index="0">
                         <img class="img-fluid w-100 h-100 object-fit-cover" src="<?php echo base_url()?>assets/depan/img/carousel-1.jpg" alt="Lomba Kebersihan">
                     </div>
                     <div class="owl-carousel-item" data-text-index="1">
                         <img class="img-fluid w-100 h-100 object-fit-cover" src="<?php echo base_url()?>assets/depan/img/carousel-2.png" alt="Kunjungan PUPR">
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
