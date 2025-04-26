@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Kampung Pegat Bukur</title>
+    <title><?php echo $site_title;?></title>
     
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
@@ -539,59 +539,36 @@
             <h1 class="mb-0">Berita Kampung</h1>
         </div>
         <div class="row g-5">
+            <?php foreach($latest_post->result() as $row):?>
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                 <div class="blog-item bg-light rounded overflow-hidden">
                     <div class="blog-img position-relative overflow-hidden">
-                        <img class="img-fluid" src="<?php echo base_url()?>assets/depan/img/blog-1.jpg" alt="Kampung Berbasis Asset">
-                        <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="#">Pengembangan Desa</a>
+                        <img class="img-fluid" src="<?php echo base_url().'assets/images/thumb/'.$row->post_image?>" alt="Post Image">                        
+                        <a class="position-absolute top-0 start-0 <?php echo $row->post_category_id == 1 ? 'bg-info' : 'bg-primary' ?> text-white rounded-end mt-5 py-2 px-4" href="<?php echo site_url('category/'.$row->category_slug);?>"><?php echo $row->category_name;?></a>
                     </div>
                     <div class="p-4">
                         <div class="d-flex mb-3">
-                            <small class="me-3"><i class="far fa-user text-primary me-2"></i>Tim Kompas</small>
-                            <small><i class="far fa-calendar-alt text-primary me-2"></i>18 Jun, 2024</small>
+                            <small class="me-3">
+                                <img src="<?php echo base_url().'assets/images/'.$row->user_photo;?>" alt="User Photo" style="width: 16px; height: 16px; border-radius: 50%; object-fit: cover; margin-right: 5px;">
+                                <?php echo $row->user_name;?>
+                            </small>
+                            <small><i class="far fa-calendar-alt text-primary me-2"></i><?php echo date('d M Y',strtotime($row->post_date));?></small>
+                            <small><i class="like light-text text-primary me-2"></i><a href="javascript:void(0)"></a> <?php echo $row->post_views;?> views</small>
                         </div>
-                        <h4 class="mb-3">Kampung Berbasis Aset: Petakan Potensi Desa Sendiri</h4>
-                        <p>Warga kampung kini didorong untuk mengenali dan memetakan aset lokal, termasuk sumber daya alam, manusia, dan sosial budaya sebagai modal pembangunan mandiri.</p>
-                        <a class="text-uppercase" href="#" target="_blank">Read More <i class="bi bi-arrow-right"></i></a>
+                        <h4 class="mb-3"><?php echo $row->post_title;?></h4>
+                        <p>
+                            <?php 
+                            $desc = $row->post_description;
+                            echo strlen($desc) > 100 ? substr($desc, 0, 100) . '...' : $desc;
+                            ?>
+                        </p>
+                        <a class="text-uppercase" href="<?php echo site_url('blog/'.$row->post_slug);?>" target="_blank">Read More <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
+            <?php endforeach;?>
 
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                <div class="blog-item bg-light rounded overflow-hidden">
-                    <div class="blog-img position-relative overflow-hidden">
-                        <img class="img-fluid" src="<?php echo base_url()?>assets/depan/img/blog-1.jpg" alt="Kampung Berbasis Asset">
-                        <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="#">Pengembangan Desa</a>
-                    </div>
-                    <div class="p-4">
-                        <div class="d-flex mb-3">
-                            <small class="me-3"><i class="far fa-user text-primary me-2"></i>Tim Kompas</small>
-                            <small><i class="far fa-calendar-alt text-primary me-2"></i>18 Jun, 2024</small>
-                        </div>
-                        <h4 class="mb-3">Kampung Berbasis Aset: Petakan Potensi Desa Sendiri</h4>
-                        <p>Warga kampung kini didorong untuk mengenali dan memetakan aset lokal, termasuk sumber daya alam, manusia, dan sosial budaya sebagai modal pembangunan mandiri.</p>
-                        <a class="text-uppercase" href="#" target="_blank">Read More <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                <div class="blog-item bg-light rounded overflow-hidden">
-                    <div class="blog-img position-relative overflow-hidden">
-                        <img class="img-fluid" src="<?php echo base_url()?>assets/depan/img/blog-1.jpg" alt="Kampung Berbasis Asset">
-                        <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="#">Pengembangan Desa</a>
-                    </div>
-                    <div class="p-4">
-                        <div class="d-flex mb-3">
-                            <small class="me-3"><i class="far fa-user text-primary me-2"></i>Tim Kompas</small>
-                            <small><i class="far fa-calendar-alt text-primary me-2"></i>18 Jun, 2024</small>
-                        </div>
-                        <h4 class="mb-3">Kampung Berbasis Aset: Petakan Potensi Desa Sendiri</h4>
-                        <p>Warga kampung kini didorong untuk mengenali dan memetakan aset lokal, termasuk sumber daya alam, manusia, dan sosial budaya sebagai modal pembangunan mandiri.</p>
-                        <a class="text-uppercase" href="#" target="_blank">Read More <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>
