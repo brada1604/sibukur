@@ -29,6 +29,115 @@ class Blog extends CI_Controller {
 	    $config['use_page_numbers']=TRUE;
 
 	    //Tambahan untuk styling
+        // $config['full_tag_open']    = '<div class="row"><nav class="page-pagination mt-60"><ul class="page-numbers">';
+        // $config['full_tag_close']   = '</ul></nav></div>';
+        // $config['num_tag_open']     = '<li><span class="page-numbers">';
+        // $config['num_tag_close']    = '</span></li>';
+        // $config['cur_tag_open']     = '<li><span class="page-numbers current">';
+        // $config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+        // $config['next_tag_open']    = '<li><span class="page-numbers">';
+        // $config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
+        // $config['prev_tag_open']    = '<li><span class="page-numbers">';
+        // $config['prev_tagl_close']  = '</span>Next</li>';
+        // $config['first_tag_open']   = '<li><span class="page-numbers">';
+        // $config['first_tagl_close'] = '</span></li>';
+        // $config['last_tag_open']    = '<li><span class="page-numbers">';
+        // $config['last_tagl_close']  = '</span></li>';
+
+
+	    // $config['first_link'] = '<';
+	    // $config['last_link'] = '>';
+	    // $config['next_link'] = '>>';
+	    // $config['prev_link'] = '<<';
+
+	    $config['full_tag_open']    = '<div class="col-12 wow slideInUp" data-wow-delay="0.1s"><nav aria-label="Page navigation"><ul class="pagination pagination-lg m-0">';
+	    $config['full_tag_close']   = '</ul></nav></div>';
+
+	    $config['num_tag_open']     = '<li class="page-item">';
+	    $config['num_tag_close']    = '</li>';
+
+	    $config['cur_tag_open']     = '<li class="page-item active"><a class="page-link" href="#">';
+	    $config['cur_tag_close']    = '</a></li>';
+
+	    $config['next_tag_open']    = '<li class="page-item">';
+	    $config['next_tag_close']   = '</li>';
+
+	    $config['prev_tag_open']    = '<li class="page-item">';
+	    $config['prev_tag_close']   = '</li>';
+
+	    $config['first_tag_open']   = '<li class="page-item">';
+	    $config['first_tag_close']  = '</li>';
+
+	    $config['last_tag_open']    = '<li class="page-item">';
+	    $config['last_tag_close']   = '</li>';
+
+	    $config['first_link'] = '<span aria-hidden="true"><i class="bi bi-arrow-left"></i></span>';
+	    $config['last_link']  = '<span aria-hidden="true"><i class="bi bi-arrow-right"></i></span>';
+	    $config['next_link']  = '<span aria-hidden="true"><i class="bi bi-arrow-right"></i></span>';
+	    $config['prev_link']  = '<span aria-hidden="true"><i class="bi bi-arrow-left"></i></span>';
+
+		// Untuk mengatur class tambahan di anchor tag
+	    $config['attributes'] = array('class' => 'page-link');
+
+
+	    $this->pagination->initialize($config);
+	    $x['page'] =$this->pagination->create_links();
+		$x['data']=$this->blog_model->get_blog_perpage($offset,$limit);
+		//print_r($this->db->last_query()); 
+		$x['judul']="Berita Kampung Pegat Bukur";
+		if(empty($this->uri->segment(3))){
+			$next_page=2;
+			$x['canonical']=site_url('blog');
+			$x['url_prev']="";
+		}elseif($this->uri->segment(3)=='1'){
+			$next_page=2;
+			$x['canonical']=site_url('blog');
+			$x['url_prev']=site_url('blog');
+		}elseif($this->uri->segment(3)=='2'){
+			$next_page=$this->uri->segment(3)+1;
+			$x['canonical']=site_url('blog/page/'.$this->uri->segment(3));
+			$x['url_prev']=site_url('blog');
+		}else{
+			$next_page=$this->uri->segment(3)+1;
+			$prev_page=$this->uri->segment(3)-1;
+			$x['canonical']=site_url('blog/page/'.$this->uri->segment(3));
+			$x['url_prev']=site_url('blog/page/'.$prev_page);
+		}
+		
+		$x['url_next']=site_url('blog/page/'.$next_page);
+		$x['populer_post'] = $this->blog_model->get_popular_post();
+		$site_info = $this->db->get('tbl_site', 1)->row();
+		$v['logo'] =  $site_info->site_logo_header;
+		$x['icon'] = $site_info->site_favicon;
+		$x['site_image'] = $site_info->site_logo_big;
+		$x['header'] = $this->load->view('header',$v,TRUE);
+		$x['footer'] = $this->load->view('footer','',TRUE);
+		$site = $this->site_model->get_site_data()->row_array();
+		$x['site_name'] = $site['site_name'];
+		$x['site_twitter'] = $site['site_twitter'];
+		$query = $this->db->query("SELECT GROUP_CONCAT(category_name) AS category_name FROM tbl_category")->row_array();
+		$x['meta_description'] = $query['category_name'];
+		$this->load->view('frontend/blog_view',$x);
+		// $this->load->view('blog_view',$x);
+	}
+
+	function index_old(){
+		$jum=$this->blog_model->get_blogs();
+	    $page=$this->uri->segment(3);
+	    if(!$page):
+	        $off = 0;
+	    else:
+	        $off = $page;
+	    endif;
+	    $limit=9;
+	    $offset = $off > 0 ? (($off - 1) * $limit) : $off;
+	    $config['base_url'] = base_url() . 'blog/page/';
+	    $config['total_rows'] = $jum->num_rows();
+	    $config['per_page'] = $limit;
+	    $config['uri_segment'] = 3;
+	    $config['use_page_numbers']=TRUE;
+
+	    //Tambahan untuk styling
         $config['full_tag_open']    = '<div class="row"><nav class="page-pagination mt-60"><ul class="page-numbers">';
         $config['full_tag_close']   = '</ul></nav></div>';
         $config['num_tag_open']     = '<li><span class="page-numbers">';
