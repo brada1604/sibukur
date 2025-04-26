@@ -274,10 +274,12 @@
                 <div class="col-lg-4">
                     <!-- Form Pencarian Start -->
                     <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
-                        <div class="input-group">
-                            <input type="text" class="form-control p-3" placeholder="Cari berita...">
-                            <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                        </div>
+                    	<form action="<?php echo site_url('search');?>" method="GET">
+	                        <div class="input-group">
+	                            <input type="text" name="search_query" class="form-control p-3" placeholder="Cari berita...">
+	                            <button class="btn btn-primary px-4" type="submit"><i class="bi bi-search"></i></button>
+	                        </div>
+                        </form>
                     </div>
                     <!-- Form Pencarian End -->
     
