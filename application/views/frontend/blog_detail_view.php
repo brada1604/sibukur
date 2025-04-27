@@ -164,6 +164,104 @@
 
 </div>
 
+<!--POST COMMENT-->
+<div class="comments-heading text-center mb-30 mt-60">
+    <hgroup>
+        <h2 class="font-face1 section-heading"><?php echo $comment;?> Comments</h2>
+        
+    </hgroup>                                   
+</div>
+
+<!-- Comment First level -->
+<ul class="comments-list mb-100 mb-md-80 mb-sm-60 clearfix">
+    <?php foreach ($show_comments->result() as $row):?>
+        <li class="comment">
+            <div class="comment-body clearfix">
+                <div class="lp1 font-face1">
+                    <span class="user-avatar float-left hidden-xs">
+                        <img alt="" src="<?php echo base_url().'assets/images/'.$row->comment_image;?>">  
+                    </span>
+                    <div class="comment-user">
+                        <a href="javascript:void(0)"><?php echo $row->comment_name;?></a>
+                    </div>
+                    <div class="comment-date">
+                        <span><?php echo date('d M Y H:i:s',strtotime($row->comment_date));?></span>
+                    </div>                                  
+                </div>                                      
+                <div class="comment-inner light-text">      
+                    <p><?php echo $row->comment_message;?></p>
+                </div>  
+            </div>    
+            <!-- Comment children second level -->
+            <?php
+            $comment_id=$row->comment_id;
+            $query = $this->db->query("SELECT * FROM tbl_comment WHERE comment_status='1' AND comment_parent='$comment_id'");
+            foreach ($query->result() as $i) :
+                ?>
+                <ul class="children">
+                    <li class="comment">
+                        <div class="comment-body clearfix">
+                            <div class="lp1 font-face1">
+                                <span class="user-avatar float-left hidden-xs">
+                                    <img alt="" src="<?php echo base_url().'assets/images/'.$i->comment_image;?>">  
+                                </span>
+                                <div class="comment-user">
+                                    <a href="javascript:void(0)"><?php echo $i->comment_name;?></a>
+                                </div>
+                                <div class="comment-date">
+                                    <span><?php echo date('d M Y H:i:s',strtotime($i->comment_date));?></span>
+                                </div>                                  
+                            </div>                                      
+                            <div class="comment-inner light-text">      
+                                <p><?php echo $i->comment_message;?></p>
+                            </div>  
+                        </div>    
+                    </li>
+                </ul>
+                <!-- Comment children second level -->
+            <?php endforeach;?>
+            
+        </li>
+    <?php endforeach;?>
+
+</ul>
+<!-- End Comment First level -->
+
+<!--POST LEAVE COMMENT-->
+<div class="comments-heading text-center mb-30">
+    <hgroup>
+        <h2 class="font-face1 section-heading">Leave a comment</h2>
+    </hgroup>                                   
+</div>
+<?php echo $this->session->flashdata('msg');?>
+<form method="post" action="<?php echo site_url('send_comment');?>" role="form" class="form">
+    <div class="row">
+        <input type="hidden" name="post_id" value="<?php echo $post_id;?>" required>
+        <input type="hidden" name="slug" value="<?php echo $slug;?>" required>
+        <div class="col-md-6">
+            <div class="form-group">
+               <input type="text" name="name" class="full_width" placeholder="Name *" maxlength="100" required="">                                        
+           </div>
+       </div>
+       <div class="col-md-6">
+        <div class="form-group">
+            <input type="email" name="email" class="full_width" placeholder="Email *" maxlength="100" required="">                                  
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <textarea name="comment" class="full_width" rows="6" placeholder="Comment *" maxlength="400" required></textarea>                                       
+        </div>
+    </div>
+    <div class="col-md-12 center-xs">
+        <button type="submit" class="btn bg-black white-color">
+            Submit comment
+        </button>
+    </div>  
+</div>      
+</form>
+<!--END POST LEAVE COMMENT-->
+
 <!-- Tombol Share Start -->
 <div class="mt-4">
     <h6 class="mb-3">Bagikan Artikel:</h6>
