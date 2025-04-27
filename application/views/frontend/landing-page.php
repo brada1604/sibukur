@@ -48,7 +48,7 @@
             <div class="container-fluid nav-bar bg-transparent">
                 <nav class="navbar navbar-expand-lg bg-white navbar-light py-0">
                     <div class="container px-4"> <!-- Tambahan container di dalam nav -->
-                        <a href="index.html" class="navbar-brand">
+                        <a href="<?php echo base_url()?>" class="navbar-brand">
                             <img src="<?php echo base_url()?>assets/depan/img/LOGO PEGAT BUKUR.png" alt="Logo" style="height: 100%;">
                         </a>
                         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
