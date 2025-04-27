@@ -206,6 +206,53 @@ class Blog extends CI_Controller {
 	function detail($slug){
 		$data=$this->blog_model->get_post_by_slug($slug);
 		if($data->num_rows() > 0){
+			$x['data_last_post']=$this->blog_model->get_last_post();
+			$x['data_all_categories_by_name']=$this->category_model->get_all_categories_by_name();
+			$x['data_all_tags_by_name']=$this->tag_model->get_all_tags_by_name();
+		
+		    $q=$data->row_array();
+    		$kode=$q['post_id'];
+    		$x['title']=$q['post_title'];
+    		if(empty($q['post_description'])){
+    			$x['description'] = strip_tags(word_limiter($q['post_contents'],25));	
+    		}else{
+    			$x['description'] = $q['post_description'];
+    		}
+    		$x['image']=$q['post_image'];
+    		$x['slug']=$q['post_slug'];
+    		$x['content']=$q['post_contents'];
+    		$x['views']=$q['post_views'];
+    		$x['comment']=$q['comment_total'];
+    		$x['author']=$q['user_name'];
+    		$x['category']=$q['category_name'];
+    		$x['category_slug']=$q['category_slug'];
+    		$x['date']=$q['post_date'];
+    		$x['tags']=$q['post_tags'];
+    		$x['post_slug']=$q['post_slug'];
+    		$x['post_id']=$kode;
+    		$category_id = $q['category_id'];
+    		$this->blog_model->count_views($kode);
+    		$x['related_post']  = $this->blog_model->get_related_post($category_id,$kode);
+    		$x['show_comments'] = $this->blog_model->show_comments($kode);
+    		$site_info = $this->db->get('tbl_site', 1)->row();
+			$v['logo'] =  $site_info->site_logo_header;
+			$x['icon'] = $site_info->site_favicon;
+    		$x['header'] = $this->load->view('header',$v,TRUE);
+    		$x['footer'] = $this->load->view('footer','',TRUE);
+    		$site = $this->site_model->get_site_data()->row_array();
+			$x['site_name'] = $site['site_name'];
+			$x['site_twitter'] = $site['site_twitter'];
+			$x['site_facebook'] = $site['site_facebook'];
+    		$this->load->view('frontend/blog_detail_view',$x);
+		}else{
+		    redirect('blog');
+		}
+			
+	}
+
+	function detail_old($slug){
+		$data=$this->blog_model->get_post_by_slug($slug);
+		if($data->num_rows() > 0){
 		    $q=$data->row_array();
     		$kode=$q['post_id'];
     		$x['title']=$q['post_title'];
