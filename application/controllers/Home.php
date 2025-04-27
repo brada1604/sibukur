@@ -32,8 +32,8 @@ class Home extends CI_Controller {
 		$site_info = $this->db->get('tbl_site', 1)->row();
 		$v['logo'] =  $site_info->site_logo_header;
 		$data['icon'] = $site_info->site_favicon;
-		$data['header'] = $this->load->view('header',$v,TRUE);
-		$data['footer'] = $this->load->view('footer','',TRUE);
+		$data['header'] = $this->load->view('frontend/header',$v,TRUE);
+		$data['footer'] = $this->load->view('frontend/footer','',TRUE);
 		// $this->load->view('home_view',$data);
 		$this->load->view('frontend/landing-page',$data);
 	}
