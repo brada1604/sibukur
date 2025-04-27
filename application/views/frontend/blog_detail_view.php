@@ -67,34 +67,7 @@
 <!-- Spinner End -->
 
 <!-- Navbar Start -->
-<div class="container-fluid nav-bar bg-transparent">
-    <nav class="navbar navbar-expand-lg bg-white navbar-light py-0">
-        <div class="container px-4"> <!-- Tambahan container di dalam nav -->
-            <a href="<?php echo base_url()?>" class="navbar-brand">
-                <img src="<?php echo base_url()?>assets/depan/img/LOGO PEGAT BUKUR.png" alt="Logo" style="height: 100%;">
-            </a>
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto">
-                    <a href="index.html" class="nav-item nav-link ">Beranda</a>
-                    <a href="about.html" class="nav-item nav-link">Profil</a>
-                    <a href="data-kampung.html" class="nav-item nav-link">Data Kampung</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Informasi</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="berita.html" class="dropdown-item active">Berita Kampung</a>
-                            <a href="lampiran.html" class="dropdown-item">Lampiran</a>
-                        </div>
-                    </div>
-                    <a href="unggulan-kampung.html" class="nav-item nav-link">Unggulan Kampung</a>
-                    <a href="galeri.html" class="nav-item nav-link">Galeri</a>
-                </div>
-            </div>
-        </div> <!-- End container -->
-    </nav>
-</div>
+<?php echo $header;?>
 <!-- Navbar End -->
 
      <!-- Blog Start -->
@@ -164,103 +137,114 @@
 
 </div>
 
-<!--POST COMMENT-->
-<div class="comments-heading text-center mb-30 mt-60">
-    <hgroup>
-        <h2 class="font-face1 section-heading"><?php echo $comment;?> Comments</h2>
+<!-- Comment List Start -->
+<div class="mb-3">
+    <div class="section-title mb-4">
+        <h4 class="text-uppercase font-weight-bold m-0"><?php echo $comment; ?> Komentar</h4>
+    </div>
+
+    <div class="bg-white border rounded p-4 shadow-sm">
         
-    </hgroup>                                   
-</div>
+        <!-- komentar tanya -->
+        <?php foreach ($show_comments->result() as $row): ?>
+            <div class="d-flex align-items-start mb-4">
+                <div class="flex-shrink-0">
+                    <img src="<?php echo base_url().'assets/images/'.$row->comment_image; ?>" 
+                         alt="User" 
+                         class="rounded-circle" 
+                         style="width: 60px; height: 60px; object-fit: cover; margin-right: 10px;">
+                </div>
+                <div class="flex-grow-1">
+                    <h6 class="font-weight-bold mb-1">
+                        <a href="javascript:void(0)" class="text-dark"><?php echo $row->comment_name; ?></a>
+                        <small class="text-muted ml-2">
+                            <i class="far fa-clock"></i> <?php echo date('d M Y H:i:s', strtotime($row->comment_date)); ?>
+                        </small>
+                    </h6>
+                    <p class="mb-2"><?php echo $row->comment_message; ?></p>
 
-<!-- Comment First level -->
-<ul class="comments-list mb-100 mb-md-80 mb-sm-60 clearfix">
-    <?php foreach ($show_comments->result() as $row):?>
-        <li class="comment">
-            <div class="comment-body clearfix">
-                <div class="lp1 font-face1">
-                    <span class="user-avatar float-left hidden-xs">
-                        <img alt="" src="<?php echo base_url().'assets/images/'.$row->comment_image;?>">  
-                    </span>
-                    <div class="comment-user">
-                        <a href="javascript:void(0)"><?php echo $row->comment_name;?></a>
+                    <!-- komentar jawab -->
+                    <?php
+                    $comment_id = $row->comment_id;
+                    $query = $this->db->query("SELECT * FROM tbl_comment WHERE comment_status='1' AND comment_parent='$comment_id'");
+                    foreach ($query->result() as $i) :
+                    ?>
+                        <div class="d-flex align-items-start mt-4 pl-5">
+                            <div class="flex-shrink-0">
+                                <img src="<?php echo base_url().'assets/images/'.$i->comment_image; ?>" 
+                                     alt="User" 
+                                     class="rounded-circle" 
+                                     style="width: 50px; height: 50px; object-fit: cover; margin-right: 20px;">
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="font-weight-bold mb-1">
+                                    <a href="javascript:void(0)" class="text-dark"><?php echo $i->comment_name; ?></a>
+                                    <small class="text-muted ml-2">
+                                        <i class="far fa-clock"></i> <?php echo date('d M Y H:i:s', strtotime($i->comment_date)); ?>
+                                    </small>
+                                </h6>
+                                <p class="mb-2 "><?php echo $i->comment_message; ?></p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                    <!-- end komentar jawab -->
+
+                </div>
+            </div>
+        <?php endforeach; ?>
+        <!-- end komentar tanya -->
+
+    </div>
+</div>
+<!-- Comment List End -->
+
+
+
+<!-- Comment Form Start -->
+<div class="mb-3">
+    <div class="section-title mb-4">
+        <h4 class="m-0 text-uppercase font-weight-bold">Tinggalkan Komentar</h4>
+    </div>
+
+    <?php echo $this->session->flashdata('msg'); ?>
+
+    <div class="bg-white border rounded p-4 shadow-sm">
+        <form method="post" action="<?php echo site_url('send_comment'); ?>" role="form">
+            <input type="hidden" name="post_id" value="<?php echo $post_id; ?>" required>
+            <input type="hidden" name="slug" value="<?php echo $slug; ?>" required>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Nama *</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Nama Anda" maxlength="100" required>
                     </div>
-                    <div class="comment-date">
-                        <span><?php echo date('d M Y H:i:s',strtotime($row->comment_date));?></span>
-                    </div>                                  
-                </div>                                      
-                <div class="comment-inner light-text">      
-                    <p><?php echo $row->comment_message;?></p>
-                </div>  
-            </div>    
-            <!-- Comment children second level -->
-            <?php
-            $comment_id=$row->comment_id;
-            $query = $this->db->query("SELECT * FROM tbl_comment WHERE comment_status='1' AND comment_parent='$comment_id'");
-            foreach ($query->result() as $i) :
-                ?>
-                <ul class="children">
-                    <li class="comment">
-                        <div class="comment-body clearfix">
-                            <div class="lp1 font-face1">
-                                <span class="user-avatar float-left hidden-xs">
-                                    <img alt="" src="<?php echo base_url().'assets/images/'.$i->comment_image;?>">  
-                                </span>
-                                <div class="comment-user">
-                                    <a href="javascript:void(0)"><?php echo $i->comment_name;?></a>
-                                </div>
-                                <div class="comment-date">
-                                    <span><?php echo date('d M Y H:i:s',strtotime($i->comment_date));?></span>
-                                </div>                                  
-                            </div>                                      
-                            <div class="comment-inner light-text">      
-                                <p><?php echo $i->comment_message;?></p>
-                            </div>  
-                        </div>    
-                    </li>
-                </ul>
-                <!-- Comment children second level -->
-            <?php endforeach;?>
-            
-        </li>
-    <?php endforeach;?>
+                </div>
 
-</ul>
-<!-- End Comment First level -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email Anda" maxlength="100" required>
+                    </div>
+                </div>
+            </div>
 
-<!--POST LEAVE COMMENT-->
-<div class="comments-heading text-center mb-30">
-    <hgroup>
-        <h2 class="font-face1 section-heading">Leave a comment</h2>
-    </hgroup>                                   
-</div>
-<?php echo $this->session->flashdata('msg');?>
-<form method="post" action="<?php echo site_url('send_comment');?>" role="form" class="form">
-    <div class="row">
-        <input type="hidden" name="post_id" value="<?php echo $post_id;?>" required>
-        <input type="hidden" name="slug" value="<?php echo $slug;?>" required>
-        <div class="col-md-6">
             <div class="form-group">
-               <input type="text" name="name" class="full_width" placeholder="Name *" maxlength="100" required="">                                        
-           </div>
-       </div>
-       <div class="col-md-6">
-        <div class="form-group">
-            <input type="email" name="email" class="full_width" placeholder="Email *" maxlength="100" required="">                                  
-        </div>
+                <label for="comment">Komentar *</label>
+                <textarea class="form-control" id="comment" name="comment" rows="6" placeholder="Tulis komentar Anda..." maxlength="400" required></textarea>
+            </div>
+
+            <div class="form-group text-left mt-3">
+                <button type="submit" class="btn btn-success font-weight-bold text-uppercase px-4 py-2">
+                    Kirim Komentar
+                </button>
+            </div>
+        </form>
     </div>
-    <div class="col-md-12">
-        <div class="form-group">
-            <textarea name="comment" class="full_width" rows="6" placeholder="Comment *" maxlength="400" required></textarea>                                       
-        </div>
-    </div>
-    <div class="col-md-12 center-xs">
-        <button type="submit" class="btn bg-black white-color">
-            Submit comment
-        </button>
-    </div>  
-</div>      
-</form>
-<!--END POST LEAVE COMMENT-->
+                    </div>
+<!-- Comment Form End -->
+
+
 
 <!-- Tombol Share Start -->
 <div class="mt-4">
@@ -353,68 +337,9 @@
     <!-- Blog End -->
     
 
-        <!-- Footer Start -->
-<div class="container-fluid bg-dark text-white-50 pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="px-4 px-md-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Hubungi Kami</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Desa Pegat Bukur, Kec. Sambaliung, Kab. Berau, Kalimantan Timur</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62 812-3456-7890</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>pegatbukur@desa.id</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Tautan Cepat</h5>
-                <a class="btn btn-link text-white-50" href="#">Profil Desa</a>
-                <a class="btn btn-link text-white-50" href="#">Berita & Kegiatan</a>
-                <a class="btn btn-link text-white-50" href="#">Statistik Penduduk</a>
-                <a class="btn btn-link text-white-50" href="#">Produk UMKM</a>
-                <a class="btn btn-link text-white-50" href="#">Galeri</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Galeri Desa</h5>
-                <div class="row g-2 pt-2">
-                    <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" alt=""></div>
-                    <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" alt=""></div>
-                    <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" alt=""></div>
-                    <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" alt=""></div>
-                    <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" alt=""></div>
-                    <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" alt=""></div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Berlangganan Info</h5>
-                <p>Dapatkan info terbaru seputar desa Pegat Bukur langsung ke email Anda.</p>
-                <div class="position-relative" style="max-width: 400px;">
-                    <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="email" placeholder="Email Anda">
-                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Daftar</button>
-                </div>
-            </div>
-        </div>
-
-        <hr class="text-secondary mt-5">
-
-        <div class="row">
-            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                &copy; <a class="text-white" href="#">Desa Pegat Bukur</a> | All Rights Reserved.
-            </div>
-            <div class="col-md-6 text-center text-md-end">
-                <div class="footer-menu">
-                    <a href="#" class="text-white-50 me-3">Beranda</a>
-                    <a href="#" class="text-white-50 me-3">Syarat</a>
-                    <a href="#" class="text-white-50 me-3">Kebijakan</a>
-                    <a href="#" class="text-white-50">Kontak</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Footer End -->
+ <!-- footer start  -->
+ <?php echo $footer;?>
+ <!-- footer end -->
 
     </div>
 

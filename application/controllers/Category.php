@@ -122,8 +122,8 @@ class Category extends CI_Controller{
 			$v['logo'] =  $site_info->site_logo_header;
 			$x['icon'] = $site_info->site_favicon;
 			$x['site_image'] = $site_info->site_logo_big;
-			$x['header'] = $this->load->view('header',$v,TRUE);
-			$x['footer'] = $this->load->view('footer','',TRUE);
+			$x['header'] = $this->load->view('frontend/header',$v,TRUE);
+			$x['footer'] = $this->load->view('frontend/footer','',TRUE);
 			$site = $this->site_model->get_site_data()->row_array();
 			$x['site_name'] = $site['site_name'];
 			$x['site_twitter'] = $site['site_twitter'];
