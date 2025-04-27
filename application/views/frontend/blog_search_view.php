@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title><?php echo $judul;?></title>
+    
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="<?php echo base_url('theme/images/'.$icon);?>" rel="icon">
+    
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="<?php echo base_url()?>assets/depan/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/depan/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="<?php echo base_url()?>assets/depan/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="<?php echo base_url()?>assets/depan/css/style.css" rel="stylesheet">
+
+    <!-- SEO Tags -->
+    <meta name="description" content="Kumpulan artikel <?php echo $meta_description;?> dan banyak lagi..."/>
+    <link rel="canonical" href="<?php echo $canonical;?>" />
+    <?php error_reporting(0); if(empty($url_prev)):?>
+    <?php else:?>
+    <link rel="prev" href="<?php echo $url_prev;?>" />
+    <?php endif;?>
+    <link rel="next" href="<?php echo $url_next;?>" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<?php echo $judul;?>" />
+    <meta property="og:description" content="Kumpulan artikel <?php echo $meta_description;?> dan banyak lagi..." />
+    <meta property="og:url" content="<?php echo $canonical;?>" />
+    <meta property="og:site_name" content="<?php echo $site_name;?>" />
+    <meta property="og:image" content="<?php echo base_url().'theme/images/'.$site_image?>" />
+    <meta property="og:image:secure_url" content="<?php echo base_url().'theme/images/'.$site_image?>" />
+    <meta property="og:image:width" content="560" />
+    <meta property="og:image:height" content="315" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="Kumpulan artikel <?php echo $meta_description;?> dan banyak lagi..." />
+    <meta name="twitter:title" content="<?php echo $judul;?>" />
+    <meta name="twitter:site" content="<?php echo $site_twitter;?>" />
+    <meta name="twitter:image" content="<?php echo base_url().'theme/images/'.$site_image?>" />
+    <!-- / SEO plugin. -->
+</head>
+
+<body>
+    <div class="container-fluid bg-white px-0">
+<!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+<!-- Spinner End -->
+
+<!-- Navbar Start -->
+<div class="container-fluid nav-bar bg-transparent">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-0">
+        <div class="container px-4"> <!-- Tambahan container di dalam nav -->
+            <a href="index.html" class="navbar-brand">
+                <img src="<?php echo base_url()?>assets/depan/img/LOGO PEGAT BUKUR.png" alt="Logo" style="height: 100%;">
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto">
+                    <a href="index.html" class="nav-item nav-link ">Beranda</a>
+                    <a href="about.html" class="nav-item nav-link">Profil</a>
+                    <a href="data-kampung.html" class="nav-item nav-link">Data Kampung</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Informasi</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="berita.html" class="dropdown-item active">Berita Kampung</a>
+                            <a href="lampiran.html" class="dropdown-item">Lampiran</a>
+                        </div>
+                    </div>
+                    <a href="unggulan-kampung.html" class="nav-item nav-link">Unggulan Kampung</a>
+                    <a href="galeri.html" class="nav-item nav-link">Galeri</a>
+                </div>
+            </div>
+        </div> <!-- End container -->
+    </nav>
+</div>
+<!-- Navbar End -->
+
+       <!-- Header Start -->
+       <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-stretch">
+                <!-- Informasi dan Navigasi -->
+                <div class="col-lg-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <h1 class="display-5 animated fadeIn mb-3">Berita Kampung</h1>
+                        <p class="animated fadeIn text-muted">
+                            Temukan kabar terbaru seputar kegiatan, pengumuman, serta informasi penting lainnya dari Desa Pegat Bukur. Bersama kita wujudkan desa yang maju, transparan, dan terhubung.
+                        </p>
+                    </div>
+                    <nav aria-label="breadcrumb animated fadeIn">
+                        <ol class="breadcrumb text-uppercase small mb-0">
+                            <li class="breadcrumb-item"><a href="#">Beranda</a></li>
+                            <li class="breadcrumb-item"><a href="#">Informasi Publik</a></li>
+                            <li class="breadcrumb-item text-body active" aria-current="page">Berita Kampung</li>
+                        </ol>
+                    </nav>
+                </div>
+    
+                <!-- Gambar Ilustrasi -->
+                <div class="col-lg-8">
+                    <div class="h-100 w-100">
+                        <img src="<?php echo base_url()?>assets/depan/img/about.jpg" alt="Berita Kampung" 
+                             class="img-fluid rounded shadow" 
+                             style="height: 100%; width: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+    
+    
+             <!-- Blog Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <!-- Blog list Start -->
+                <div class="col-lg-8">
+                    <div class="row g-5">
+                        <?php foreach ($data->result() as $row):?>
+                        <div class="col-md-6 wow slideInUp" data-wow-delay="0.1s">
+                            <div class="blog-item bg-light rounded overflow-hidden">
+                                <div class="blog-img position-relative overflow-hidden">
+                                    <img class="img-fluid" src="<?php echo base_url().'assets/images/thumb/'.$row->post_image;?>" alt="">
+                                    <a class="position-absolute top-0 start-0 <?php echo $row->post_category_id == 1 ? 'bg-info' : 'bg-primary' ?> text-white rounded-end mt-5 py-2 px-4" href="<?php echo site_url('category/'.$row->category_slug);?>"><?php echo $row->category_name;?></a>
+                                </div>
+                                <div class="p-4">
+                                    <div class="d-flex mb-3">
+                                        <small class="me-3">
+                                        	<img src="<?php echo base_url().'assets/images/'.$row->user_photo;?>" alt="User Photo" style="width: 16px; height: 16px; border-radius: 50%; object-fit: cover; margin-right: 5px;">
+                                        	<?php echo $row->user_name;?>
+                                        </small>
+                                        <small><i class="far fa-calendar-alt text-primary me-2"></i><?php echo date('d M Y',strtotime($row->post_date));?></small>
+                                        <small><i class="like light-text text-primary me-2"></i><a href="javascript:void(0)"></a> <?php echo $row->post_views;?> views</small>
+                                    </div>
+                                    <h4 class="mb-3"><?php echo $row->post_title;?></h4>
+                                    <p>
+                                    	<?php 
+                                    	$desc = $row->post_description;
+                                    	echo strlen($desc) > 100 ? substr($desc, 0, 100) . '...' : $desc;
+                                    	?>
+                                    </p>
+                                    <a class="text-uppercase" href="<?php echo site_url('blog/'.$row->post_slug);?>" target="_blank">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endforeach;?>
+    
+   
+                        <!-- Pagination Start -->
+						<?php echo $page;?>
+                        <!-- Pagination End -->
+                    </div>
+                </div>
+                <!-- Blog list End -->
+    
+                <!-- Sidebar Start -->
+                <div class="col-lg-4">
+                    <!-- Form Pencarian Start -->
+                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                    	<form action="<?php echo site_url('search');?>" method="GET">
+	                        <div class="input-group">
+	                            <input type="text" name="search_query" class="form-control p-3" placeholder="Cari berita...">
+	                            <button class="btn btn-primary px-4" type="submit"><i class="bi bi-search"></i></button>
+	                        </div>
+                        </form>
+                    </div>
+                    <!-- Form Pencarian End -->
+    
+                    <!-- Kategori Start -->
+                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Kategori</h3>
+                        </div>
+                        <div class="link-animated d-flex flex-column justify-content-start">
+                        	<?php foreach ($data_all_categories_by_name->result() as $row2):?>
+                            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="<?php echo site_url('category/'.$row2->category_slug);?>"><i class="bi bi-arrow-right me-2"></i><?php echo $row2->category_name;?></a>
+                        	<?php endforeach;?>
+                        </div>
+                    </div>
+                    <!-- Kategori End -->
+    
+                    <!-- Postingan Terbaru Start -->
+                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Postingan Terbaru</h3>
+                        </div>
+                        <?php foreach ($data_last_post->result() as $row1):?>
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="<?php echo base_url().'assets/images/thumb/'.$row1->post_image;?>" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="<?php echo site_url('blog/'.$row1->post_slug);?>" target="_blank" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0"><?php echo $row1->post_title;?></a>
+                        </div>
+                        <?php endforeach;?>
+                        <!-- Ulangi untuk posting lainnya -->
+                    </div>
+                    <!-- Postingan Terbaru End -->
+    
+                    <!-- Tag Start -->
+                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Tag</h3>
+                        </div>
+                        <div class="d-flex flex-wrap">
+                        	<?php foreach ($data_all_tags_by_name->result() as $row3):?>
+                        	<a href="<?php echo site_url('tag/'.$row3->tag_name);?>" target="_blank" class="btn btn-sm btn-outline-primary m-1"><?php echo $row3->tag_name;?></a>
+                        	<?php endforeach;?>
+                        </div>
+                    </div>
+                    <!-- Tag End -->
+                </div>
+                <!-- Sidebar End -->
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+       
+
+        <!-- Footer Start -->
+<div class="container-fluid bg-dark text-white-50 pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="px-4 px-md-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-white mb-4">Hubungi Kami</h5>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Desa Pegat Bukur, Kec. Sambaliung, Kab. Berau, Kalimantan Timur</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62 812-3456-7890</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>pegatbukur@desa.id</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-white mb-4">Tautan Cepat</h5>
+                <a class="btn btn-link text-white-50" href="#">Profil Desa</a>
+                <a class="btn btn-link text-white-50" href="#">Berita & Kegiatan</a>
+                <a class="btn btn-link text-white-50" href="#">Statistik Penduduk</a>
+                <a class="btn btn-link text-white-50" href="#">Produk UMKM</a>
+                <a class="btn btn-link text-white-50" href="#">Galeri</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-white mb-4">Galeri Desa</h5>
+                <div class="row g-2 pt-2">
+                    <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" alt=""></div>
+                    <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" alt=""></div>
+                    <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" alt=""></div>
+                    <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" alt=""></div>
+                    <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" alt=""></div>
+                    <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" alt=""></div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-white mb-4">Berlangganan Info</h5>
+                <p>Dapatkan info terbaru seputar desa Pegat Bukur langsung ke email Anda.</p>
+                <div class="position-relative" style="max-width: 400px;">
+                    <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="email" placeholder="Email Anda">
+                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Daftar</button>
+                </div>
+            </div>
+        </div>
+
+        <hr class="text-secondary mt-5">
+
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                &copy; <a class="text-white" href="#">Desa Pegat Bukur</a> | All Rights Reserved.
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <div class="footer-menu">
+                    <a href="#" class="text-white-50 me-3">Beranda</a>
+                    <a href="#" class="text-white-50 me-3">Syarat</a>
+                    <a href="#" class="text-white-50 me-3">Kebijakan</a>
+                    <a href="#" class="text-white-50">Kontak</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+    </div>
+
+<!-- 1. jQuery dulu -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- 2. jQuery Easing -->
+<script src="<?php echo base_url()?>assets/depan/lib/easing/easing.min.js"></script>
+
+<!-- 3. Plugin dan Library lain -->
+<script src="<?php echo base_url()?>assets/depan/lib/wow/wow.min.js"></script>
+<script src="<?php echo base_url()?>assets/depan/lib/waypoints/waypoints.min.js"></script>
+<script src="<?php echo base_url()?>assets/depan/lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- 4. Custom JS kamu -->
+<script src="<?php echo base_url()?>assets/depan/js/main.js"></script>
+</body>
+
+</html>
+   
