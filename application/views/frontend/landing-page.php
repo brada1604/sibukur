@@ -260,6 +260,8 @@
                             <a class="btn btn-square btn-outline-secondary mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-square btn-outline-secondary mx-1" href="#"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-square btn-outline-secondary mx-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-outline-secondary mx-1" href="#"><i class="fab fa-whatsapp"></i></a>
+                            <a class="btn btn-square btn-outline-secondary mx-1" href="#"><i class="fab fa-tiktok"></i></a>
                         </div>
                     </div>
                     <div class="text-center p-4 mt-3">
