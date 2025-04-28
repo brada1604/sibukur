@@ -303,9 +303,9 @@
     </div>
     <!-- Blog End -->
 
-        <!-- footer start  -->
- <?php echo $footer;?>
- <!-- footer end -->
+<!-- footer start  -->
+<?php echo $footer;?>
+<!-- footer end -->
 
 
     </div>
