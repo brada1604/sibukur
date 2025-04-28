@@ -179,14 +179,15 @@
                     <div class="row g-5 align-items-center">
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                                <img class="img-fluid w-100" src="<?php echo base_url()?>assets/depan/img/Kepala Desa.png">
+                                <!-- <img class="img-fluid w-100" src="<?php echo base_url()?>assets/depan/img/Kepala Desa.png"> -->
+                                <img class="img-fluid w-100" src="<?php echo base_url().'theme/images/'.$about_img; ?>">
                             </div>
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                             <h1 class="mb-4">Sambutan Kepala Kampung Pegat Bukur</h1>
-                            <p class="mb-4">Puji syukur alhamdulillah kami panjatkan ke hadirat Allah SWT atas limpahan rahmat, bimbingan serta karunia-Nya sehingga Website Kampung Pegat Bukur dapat hadir dihadapan masyarakat luas, khususnya warga Kampung Pegat Bukur Kecamatan Sambaliung Kabupaten Berau</p>
+                            <p class="mb-4"><?php echo $about_desc; ?></p>
                             
-                            <a class="btn btn-primary py-3 px-5 mt-3" href="<?php echo base_url()?>profil">Selengkapnya Tentang Kampung</a>
+                            <a class="btn btn-primary py-3 px-5 mt-3" href="<?php echo base_url()?>about">Selengkapnya Tentang Kampung</a>
                         </div>
                     </div>
                 </div>
@@ -280,16 +281,13 @@
         <!-- Deskripsi Lokasi -->
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
             <h1 class="mb-3">Lokasi Kampung</h1>
-            <p>Desa Pegat Bukur terletak di Kecamatan Sambaliung, Kabupaten Berau, Provinsi Kalimantan Timur </p>
+            <p><?php echo $about_loc; ?> </p>
         </div>
 
         <!-- Peta Lokasi -->
         <div class="row g-4">
             <div class="col-md-12 wow fadeInUp" data-wow-delay="0.1s">
-                <iframe class="position-relative rounded w-100"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90221.93468088318!2d117.4061760830043!3d2.0423325857991133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x320dede3ae21b6dd%3A0xe49cbee4ad75748c!2sPegat%20Bukur%2C%20Kec.%20Sambaliung%2C%20Kabupaten%20Berau%2C%20Kalimantan%20Timur!5e0!3m2!1sid!2sid!4v1745124572473!5m2!1sid!2sid"
-                    frameborder="0" style="min-height: 400px; border: 0;" allowfullscreen="" aria-hidden="false" tabindex="0" 
-                    title="Lokasi Desa Pegat Bukur"></iframe>
+                <?php echo $about_map; ?>
             </div>
         </div>
     </div>
