@@ -289,7 +289,7 @@
                                         <div class="form-group">
                                             <label for="input1" class="col-sm-2 control-label">Image Logo</label>
                                             <div class="col-sm-10">
-                                                <input type="file" name="img_logo" class="form-control" id="input1">
+                                                <input type="file" name="logo_about" class="form-control" id="input1">
                                                 <p class="help-block">Image Logo harus beresolusi 456 x 470 Pixels.</p>
                                                 <img src="<?php echo base_url().'theme/images/'.$about_logo;?>" width="300" class="thumbnail">
                                             </div>

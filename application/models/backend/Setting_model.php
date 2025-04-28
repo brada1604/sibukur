@@ -53,8 +53,24 @@ class Setting_model extends CI_Model{
 		$this->db->update('tbl_about');
 	}
 
-	function update_information_about_noimg($about_id,$description){
+	function update_information_about_noimg($about_id,$description,$location,$map,$visi,$misi){
 		$this->db->set('about_description',$description);
+		$this->db->set('about_location',$location);
+		$this->db->set('about_map',$map);
+		$this->db->set('about_visi',$visi);
+		$this->db->set('about_misi',$misi);
+		$this->db->where('about_id',$about_id);
+		$this->db->update('tbl_about');
+	}
+
+	function update_information_about_img($about_id,$img_about_image){
+		$this->db->set('about_image',$img_about_image);
+		$this->db->where('about_id',$about_id);
+		$this->db->update('tbl_about');
+	}
+
+	function update_information_about_logo($about_id,$img_about_logo){
+		$this->db->set('about_logo',$img_about_logo);
 		$this->db->where('about_id',$about_id);
 		$this->db->update('tbl_about');
 	}
