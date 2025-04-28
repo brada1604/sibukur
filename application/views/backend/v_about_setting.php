@@ -254,7 +254,44 @@
                                         <div class="form-group">
                                             <label for="input1" class="col-sm-2 control-label">Description</label>
                                             <div class="col-sm-10">
-                                                <textarea name="description" class="form-control" id="summernote" placeholder="Description"><?php echo $about_desc;?></textarea>
+                                                <textarea name="description" class="form-control" id="summernote-description" placeholder="Description"><?php echo $about_desc;?></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="input" class="col-sm-2 control-label">Location</label>
+                                            <div class="col-sm-10">
+                                                <textarea name="location" class="form-control"  placeholder="Location"><?php echo $about_loc;?></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="input" class="col-sm-2 control-label">Map</label>
+                                            <div class="col-sm-10">
+                                                <textarea name="map" class="form-control"  placeholder="Map"><?php echo $about_map;?></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="input" class="col-sm-2 control-label">Visi</label>
+                                            <div class="col-sm-10">
+                                                <textarea name="visi" class="form-control"  placeholder="Visi"><?php echo $about_visi;?></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="input" class="col-sm-2 control-label">Misi</label>
+                                            <div class="col-sm-10">
+                                                <textarea name="misi" class="form-control"  placeholder="Misi"><?php echo $about_misi;?></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="input1" class="col-sm-2 control-label">Image Logo</label>
+                                            <div class="col-sm-10">
+                                                <input type="file" name="img_logo" class="form-control" id="input1">
+                                                <p class="help-block">Image Logo harus beresolusi 456 x 470 Pixels.</p>
+                                                <img src="<?php echo base_url().'theme/images/'.$about_logo;?>" width="300" class="thumbnail">
                                             </div>
                                         </div>
 
@@ -302,7 +339,7 @@
         
         <script type="text/javascript">
             $(document).ready(function(){
-                $('#summernote').summernote({
+                $('#summernote-description').summernote({
                       height: 300,
                       toolbar: [    
                             ['style', ['style']],
@@ -315,6 +352,7 @@
 
                 });
             });
+            
         </script>
         <!--Toast Message-->
         <?php if($this->session->flashdata('msg')=='success'):?>

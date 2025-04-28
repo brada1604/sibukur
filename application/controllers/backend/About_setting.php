@@ -18,6 +18,11 @@ class About_setting extends CI_Controller{
 		$x['about_id'] = $data->about_id;
 		$x['about_img'] = $data->about_image;
 		$x['about_desc'] = $data->about_description;
+		$x['about_loc'] = $data->about_location;
+		$x['about_map'] = $data->about_map;
+		$x['about_visi'] = $data->about_visi;
+		$x['about_misi'] = $data->about_misi;
+		$x['about_logo'] = $data->about_logo;
 		$this->load->view('backend/v_about_setting',$x);
 	}
 
