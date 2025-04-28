@@ -109,13 +109,13 @@
                                 <i class="fa fa-cogs text-white"></i>
                             </div>
                             <h4>Visi</h4>
-                            <p class="mb-0">Mewujudkan Kampung Pegat Bukur sebagai desa yang mandiri, maju, dan berbudaya, dengan memanfaatkan potensi alam dan sumber daya lokal untuk kesejahteraan masyarakat.</p>
+                            <p class="mb-0"><?php echo $about_visi; ?></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="<?php echo base_url()?>assets/depan/img/team-4.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="<?php echo base_url().'theme/images/'.$about_logo; ?>" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -125,7 +125,7 @@
                                 <i class="fa fa-people-carry text-white"></i>
                             </div>
                             <h4>Misi</h4>
-                            <p class="mb-0">1. Meningkatkan kualitas sumber daya manusia melalui pendidikan dan pelatihan.<br>2. Mengembangkan potensi ekonomi berbasis agraris dan wisata.<br>3. Memperkuat solidaritas sosial dan gotong royong dalam kehidupan bermasyarakat.</p>
+                            <p class="mb-0"><?php echo $about_misi; ?></p>
                         </div>
                     </div>
                 </div>
@@ -141,16 +141,13 @@
             <!-- Deskripsi Lokasi -->
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <h1 class="mb-3">Lokasi Kampung</h1>
-                <p>Desa Pegat Bukur terletak di Kecamatan Sambaliung, Kabupaten Berau, Provinsi Kalimantan Timur </p>
+                <p><?php echo $about_loc; ?> </p>
             </div>
     
             <!-- Peta Lokasi -->
             <div class="row g-4">
                 <div class="col-md-12 wow fadeInUp" data-wow-delay="0.1s">
-                    <iframe class="position-relative rounded w-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90221.93468088318!2d117.4061760830043!3d2.0423325857991133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x320dede3ae21b6dd%3A0xe49cbee4ad75748c!2sPegat%20Bukur%2C%20Kec.%20Sambaliung%2C%20Kabupaten%20Berau%2C%20Kalimantan%20Timur!5e0!3m2!1sid!2sid!4v1745124572473!5m2!1sid!2sid"
-                        frameborder="0" style="min-height: 400px; border: 0;" allowfullscreen="" aria-hidden="false" tabindex="0" 
-                        title="Lokasi Desa Pegat Bukur"></iframe>
+                    <?php echo $about_map; ?>
                 </div>
             </div>
         </div>

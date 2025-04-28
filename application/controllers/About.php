@@ -14,6 +14,11 @@ class About extends CI_Controller{
 		$about = $this->db->get('tbl_about', 1)->row();
 		$data['about_img'] = $about->about_image;
 		$data['about_desc'] = $about->about_description;
+		$data['about_loc'] = $about->about_location;
+		$data['about_map'] = $about->about_map;
+		$data['about_visi'] = $about->about_visi;
+		$data['about_misi'] = $about->about_misi;
+		$data['about_logo'] = $about->about_logo;
 		$v['logo'] =  $site_info->site_logo_header;
 		$data['icon'] = $site_info->site_favicon;
 		$data['header'] = $this->load->view('frontend/header',$v,TRUE);

@@ -281,7 +281,7 @@
         <!-- Deskripsi Lokasi -->
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
             <h1 class="mb-3">Lokasi Kampung</h1>
-            <p><?php echo $about_loc; ?> </p>
+            <p><?php echo $about_loc; ?></p>
         </div>
 
         <!-- Peta Lokasi -->
