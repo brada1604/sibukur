@@ -73,7 +73,7 @@
 <!-- Navbar End -->
 
        <!-- Header Start -->
-       <div class="container-xxl py-5">
+    <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5 align-items-stretch">
                 <!-- Informasi dan Navigasi -->
@@ -84,13 +84,7 @@
                             Temukan kabar terbaru seputar kegiatan, pengumuman, serta informasi penting lainnya dari Desa Pegat Bukur. Bersama kita wujudkan desa yang maju, transparan, dan terhubung.
                         </p>
                     </div>
-                    <nav aria-label="breadcrumb animated fadeIn">
-                        <ol class="breadcrumb text-uppercase small mb-0">
-                            <li class="breadcrumb-item"><a href="#">Beranda</a></li>
-                            <li class="breadcrumb-item"><a href="#">Informasi Publik</a></li>
-                            <li class="breadcrumb-item text-body active" aria-current="page">Berita Kampung</li>
-                        </ol>
-                    </nav>
+               
                 </div>
     
                 <!-- Gambar Ilustrasi -->
