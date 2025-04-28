@@ -118,7 +118,7 @@
 
             <!-- Data Kampung -->
             <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.1s">
-                <a class="cat-item d-block bg-light text-center rounded p-3 h-100" href="data-kampung.html">
+                <a class="cat-item d-block bg-light text-center rounded p-3 h-100" href="<?php echo base_url()?>data-kampung">
                     <div class="rounded py-4 px-2 d-flex flex-column align-items-center justify-content-center h-100">
                         <div class="icon text-primary mb-2" style="font-size: 26px;">
                             <i class="fas fa-database"></i>
@@ -130,7 +130,7 @@
 
             <!-- Berita -->
             <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.2s">
-                <a class="cat-item d-block bg-light text-center rounded p-3 h-100" href="berita.html">
+                <a class="cat-item d-block bg-light text-center rounded p-3 h-100" href="<?php echo base_url()?>blog">
                     <div class="rounded py-4 px-2 d-flex flex-column align-items-center justify-content-center h-100">
                         <div class="icon text-primary mb-2" style="font-size: 26px;">
                             <i class="fas fa-newspaper"></i>
@@ -142,7 +142,7 @@
 
             <!-- Lampiran -->
             <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.3s">
-                <a class="cat-item d-block bg-light text-center rounded p-3 h-100" href="lampiran.html">
+                <a class="cat-item d-block bg-light text-center rounded p-3 h-100" href="<?php echo base_url()?>lampiran">
                     <div class="rounded py-4 px-2 d-flex flex-column align-items-center justify-content-center h-100">
                         <div class="icon text-primary mb-2" style="font-size: 26px;">
                             <i class="fas fa-file-alt"></i>
@@ -154,7 +154,7 @@
 
             <!-- Unggulan Kampung -->
             <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
-                <a class="cat-item d-block bg-light text-center rounded p-3 h-100" href="unggulan-kampung.html">
+                <a class="cat-item d-block bg-light text-center rounded p-3 h-100" href="<?php echo base_url()?>unggulan-kampung">
                     <div class="rounded py-4 px-2 d-flex flex-column align-items-center justify-content-center h-100">
                         <div class="icon text-primary mb-2" style="font-size: 26px;">
                             <i class="fas fa-award"></i>
