@@ -186,7 +186,7 @@
                             <h1 class="mb-4">Sambutan Kepala Kampung Pegat Bukur</h1>
                             <p class="mb-4">Puji syukur alhamdulillah kami panjatkan ke hadirat Allah SWT atas limpahan rahmat, bimbingan serta karunia-Nya sehingga Website Kampung Pegat Bukur dapat hadir dihadapan masyarakat luas, khususnya warga Kampung Pegat Bukur Kecamatan Sambaliung Kabupaten Berau</p>
                             
-                            <a class="btn btn-primary py-3 px-5 mt-3" href="">Selengkapnya Tentang Kampung</a>
+                            <a class="btn btn-primary py-3 px-5 mt-3" href="<?php echo base_url()?>profil">Selengkapnya Tentang Kampung</a>
                         </div>
                     </div>
                 </div>
