@@ -169,11 +169,11 @@
                             <div class="position-relative">
                                 <img class="img-fluid" src="<?php echo base_url().'assets/depan/img/staff/'.$row3->staff_image?>" alt="Foto Staf">
                                 <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square btn-outline-secondary mx-1" href="https://facebook.com/<?php echo $row3->staff_facebook;?>"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-outline-secondary mx-1" href="https://x.com/<?php echo $row3->staff_x;?>"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-outline-secondary mx-1" href="https://instagram.com<?php echo $row3->staff_instagram;?>"><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-outline-secondary mx-1" href="https://wa.me/<?php echo $row3->staff_whatsapp;?>"><i class="fab fa-whatsapp"></i></a>
-                                    <a class="btn btn-square btn-outline-secondary mx-1" href="https://tiktok.com/<?php echo $row3->staff_tiktok;?>"><i class="fab fa-tiktok"></i></a>
+                                    <a class="btn btn-square btn-outline-secondary mx-1" href="<?php echo $row3->staff_facebook;?>"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-outline-secondary mx-1" href="<?php echo $row3->staff_x;?>"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-outline-secondary mx-1" href="<?php echo $row3->staff_instagram;?>"><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square btn-outline-secondary mx-1" href="<?php echo $row3->staff_whatsapp;?>"><i class="fab fa-whatsapp"></i></a>
+                                    <a class="btn btn-square btn-outline-secondary mx-1" href="<?php echo $row3->staff_tiktok;?>"><i class="fab fa-tiktok"></i></a>
                                 </div>
                             </div>
                             <div class="text-center p-4 mt-3">
