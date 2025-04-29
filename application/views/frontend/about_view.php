@@ -163,7 +163,27 @@
             </div>
             <div class="row g-4">
                 <!-- Repeat for each staff -->
-                <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
+                <?php foreach($list_staff->result() as $row3):?>
+                    <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item rounded overflow-hidden shadow-sm">
+                            <div class="position-relative">
+                                <img class="img-fluid" src="<?php echo base_url().'assets/depan/img/staff/'.$row3->staff_image?>" alt="Foto Staf">
+                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                                    <a class="btn btn-square btn-outline-secondary mx-1" href="https://facebook.com/<?php echo $row3->staff_facebook;?>"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-outline-secondary mx-1" href="https://x.com/<?php echo $row3->staff_x;?>"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-outline-secondary mx-1" href="https://instagram.com<?php echo $row3->staff_instagram;?>"><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square btn-outline-secondary mx-1" href="https://wa.me/<?php echo $row3->staff_whatsapp;?>"><i class="fab fa-whatsapp"></i></a>
+                                    <a class="btn btn-square btn-outline-secondary mx-1" href="https://tiktok.com/<?php echo $row3->staff_tiktok;?>"><i class="fab fa-tiktok"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4 mt-3">
+                                <h5 class="fw-bold mb-1"><?php echo $row3->staff_name;?></h5>
+                                <small><?php echo $row3->staff_position;?></small>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach;?>
+                <!-- <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item rounded overflow-hidden shadow-sm">
                         <div class="position-relative">
                             <img class="img-fluid" src="<?php echo base_url()?>assets/depan/img/team-1.jpg" alt="Foto Staf">
@@ -226,7 +246,7 @@
                             <small>Jabatan</small>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 
                 <!-- Ulangi blok di atas untuk staf lainnya -->
             </div>

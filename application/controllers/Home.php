@@ -7,6 +7,7 @@ class Home extends CI_Controller {
 		$this->load->model('Visitor_model','visitor_model');
 		$this->load->model('Home_model','home_model');
 		$this->load->model('Site_model','site_model');
+		$this->load->model('Staff_model','staff_model');
         $this->visitor_model->count_visitor();
         $this->load->helper('text');
 	}
@@ -23,6 +24,7 @@ class Home extends CI_Controller {
 		$data['post_header_3'] = $this->home_model->get_post_header_3();
 		$data['latest_post'] = $this->home_model->get_latest_post();
 		$data['popular_post'] = $this->home_model->get_popular_post();
+		$data['list_staff'] = $this->staff_model->get_all_staff();
 		$about = $this->db->get('tbl_about', 1)->row();
 		$data['about_img'] = $about->about_image;
 		$data['about_desc'] = $about->about_description;

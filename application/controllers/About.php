@@ -4,6 +4,7 @@ class About extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model('Visitor_model','visitor_model');
+		$this->load->model('Staff_model','staff_model');
         $this->visitor_model->count_visitor();
         $this->load->helper('text');
         error_reporting(0);
@@ -19,6 +20,7 @@ class About extends CI_Controller{
 		$data['about_visi'] = $about->about_visi;
 		$data['about_misi'] = $about->about_misi;
 		$data['about_logo'] = $about->about_logo;
+		$data['list_staff'] = $this->staff_model->get_all_staff();
 		$v['logo'] =  $site_info->site_logo_header;
 		$data['icon'] = $site_info->site_favicon;
 		$data['header'] = $this->load->view('frontend/header',$v,TRUE);
