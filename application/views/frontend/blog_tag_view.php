@@ -96,7 +96,7 @@
                 <!-- Gambar Ilustrasi -->
                 <div class="col-lg-8">
                     <div class="h-100 w-100">
-                        <img src="<?php echo base_url()?>assets/depan/img/about.jpg" alt="Berita Kampung" 
+                        <img src="<?php echo base_url()?>assets/depan/img/about.png" alt="Berita Kampung" 
                              class="img-fluid rounded shadow" 
                              style="height: 100%; width: 100%; object-fit: cover;">
                     </div>

@@ -66,7 +66,7 @@
                 <!-- Right Column (Image) -->
                 <div class="col-lg-6">
                     <div class="h-100 w-100">
-                        <img src="<?php echo base_url()?>assets/depan/img/about.jpg" alt="Tentang Kami" 
+                        <img src="<?php echo base_url()?>assets/depan/img/about.png" alt="Tentang Kami" 
                             class="img-fluid rounded shadow" 
                             style="object-fit: cover; height: 100%; width: 100%;">
                     </div>
@@ -83,7 +83,7 @@
                     <div class="row g-5">
                         <div class="col-lg-5" style="min-height: 500px;">
                             <div class="position-relative h-100">
-                                <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="<?php echo base_url()?>assets/depan/img/about.jpg" style="object-fit: cover;">
+                                <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="<?php echo base_url()?>assets/depan/img/about.png" style="object-fit: cover;">
                             </div>
                         </div>
                         <div class="col-lg-7">
