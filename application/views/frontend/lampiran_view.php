@@ -102,7 +102,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                <a class="btn btn-primary" href="dokumen/rpjmdes-2024-2030.pdf" target="_blank"><i class="fas fa-download me-2"></i>Unduh</a>
+                                <a class="btn btn-primary" href="<?php echo $row->lampiran_url;?>" target="_blank"><i class="fas fa-download me-2"></i>Unduh</a>
                             </div>
                         </div>
                     </div>
