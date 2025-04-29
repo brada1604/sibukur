@@ -8,4 +8,12 @@ class Lampiran_model extends CI_Model{
 		$query = $this->db->get();
 		return $query;
 	}
+
+	function get_all_lampiran_by_date(){
+		$this->db->select('tbl_lampiran.*');
+		$this->db->from('tbl_lampiran');
+		$this->db->order_by('lampiran_date', 'DESC');
+		$query = $this->db->get();
+		return $query;
+	}
 }

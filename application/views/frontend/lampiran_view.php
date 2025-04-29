@@ -91,13 +91,14 @@
                 <div id="tab-1" class="tab-pane fade show p-0 active">
 
                     <!-- Item Lampiran -->
+                    <?php foreach($list_lampiran->result() as $row):?>
                     <div class="job-item p-4 mb-4 border rounded shadow-sm">
                         <div class="row g-4">
                             <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                <img class="flex-shrink-0 img-fluid border rounded bg-light" src="<?php echo base_url()?>assets/depan/img/pdf.png" alt="Dokumen PDF" style="width: 80px; height: 80px;">
+                                <img class="flex-shrink-0 img-fluid border rounded bg-light" src="<?php echo base_url().'assets/depan/img/lampiran/'.$row->lampiran_image?>" alt="Dokumen" style="width: 80px; height: 80px;">
                                 <div class="text-start ps-4">
-                                    <h5 class="mb-2">Rencana Pembangunan Jangka Menengah Desa (RPJMDes) 2024–2030</h5>
-                                    <p class="mb-0"><i class="far fa-calendar-alt text-primary me-2"></i>Dipublikasikan: 12 April 2024</p>
+                                    <h5 class="mb-2"><?php echo $row->lampiran_title;?></h5>
+                                    <p class="mb-0"><i class="far fa-calendar-alt text-primary me-2"></i>Dipublikasikan : <?php echo date('d M Y',strtotime($row->lampiran_date));?></p>
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
@@ -105,8 +106,9 @@
                             </div>
                         </div>
                     </div>
+                    <?php endforeach;?>
 
-                    <div class="job-item p-4 mb-4 border rounded shadow-sm">
+                    <!-- <div class="job-item p-4 mb-4 border rounded shadow-sm">
                         <div class="row g-4">
                             <div class="col-sm-12 col-md-8 d-flex align-items-center">
                                 <img class="flex-shrink-0 img-fluid border rounded bg-light" src="<?php echo base_url()?>assets/depan/img/word.png" alt="Dokumen PDF" style="width: 80px; height: 80px;">
@@ -119,9 +121,9 @@
                                 <a class="btn btn-primary" href="dokumen/apbdes-2023.pdf" target="_blank"><i class="fas fa-download me-2"></i>Unduh</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="job-item p-4 mb-4 border rounded shadow-sm">
+                    <!-- <div class="job-item p-4 mb-4 border rounded shadow-sm">
                         <div class="row g-4">
                             <div class="col-sm-12 col-md-8 d-flex align-items-center">
                                 <img class="flex-shrink-0 img-fluid border rounded bg-light" src="<?php echo base_url()?>assets/depan/img/excel.png" alt="Dokumen PDF" style="width: 80px; height: 80px;">
@@ -134,9 +136,9 @@
                                 <a class="btn btn-primary" href="dokumen/perdes-sampah.pdf" target="_blank"><i class="fas fa-download me-2"></i>Unduh</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="job-item p-4 mb-4 border rounded shadow-sm">
+                    <!-- <div class="job-item p-4 mb-4 border rounded shadow-sm">
                         <div class="row g-4">
                             <div class="col-sm-12 col-md-8 d-flex align-items-center">
                                 <img class="flex-shrink-0 img-fluid border rounded bg-light" src="<?php echo base_url()?>assets/depan/img/pdf.png" alt="Dokumen PDF" style="width: 80px; height: 80px;">
@@ -149,9 +151,9 @@
                                 <a class="btn btn-primary" href="dokumen/statistik-kependudukan-2024.pdf" target="_blank"><i class="fas fa-download me-2"></i>Unduh</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <a class="btn btn-outline-primary py-3 px-5" href="semua-lampiran.html">Lihat Semua Lampiran</a>
+                    <!-- <a class="btn btn-outline-primary py-3 px-5" href="semua-lampiran.html">Lihat Semua Lampiran</a> -->
                 </div>
             </div>
         </div>
