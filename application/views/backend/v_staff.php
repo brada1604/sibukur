@@ -2,41 +2,40 @@
 <html>
     <head>
         <!-- Title -->
-        <title>About Settings</title>
-
+        <title>Staff List</title>
+        
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta charset="UTF-8">
         <meta name="description" content="" />
         <meta name="keywords" content="" />
         <meta name="author" content="M Fikri Setiadi" />
         <link rel="shortcut icon" href="<?php echo base_url().'assets/images/favicon.png'?>">
-
+        
         <!-- Styles -->
         <link href="<?php echo base_url().'assets/plugins/pace-master/themes/blue/pace-theme-flash.css'?>" rel="stylesheet"/>
         <link href="<?php echo base_url().'assets/plugins/uniform/css/uniform.default.min.css'?>" rel="stylesheet"/>
         <link href="<?php echo base_url().'assets/plugins/bootstrap/css/bootstrap.min.css'?>" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url().'assets/plugins/fontawesome/css/font-awesome.css'?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url().'assets/plugins/line-icons/simple-line-icons.css'?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url().'assets/plugins/offcanvasmenueffects/css/menu_cornerbox.css'?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url().'assets/plugins/waves/waves.min.css'?>" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo base_url().'assets/plugins/line-icons/simple-line-icons.css'?>" rel="stylesheet" type="text/css"/>	
+        <link href="<?php echo base_url().'assets/plugins/offcanvasmenueffects/css/menu_cornerbox.css'?>" rel="stylesheet" type="text/css"/>	
+        <link href="<?php echo base_url().'assets/plugins/waves/waves.min.css'?>" rel="stylesheet" type="text/css"/>	
         <link href="<?php echo base_url().'assets/plugins/switchery/switchery.min.css'?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url().'assets/plugins/3d-bold-navigation/css/style.css'?>" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo base_url().'assets/plugins/3d-bold-navigation/css/style.css'?>" rel="stylesheet" type="text/css"/>	
         <link href="<?php echo base_url().'assets/plugins/slidepushmenus/css/component.css'?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url().'assets/plugins/datatables/css/jquery.datatables.min.css'?>" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo base_url().'assets/plugins/datatables/css/jquery.datatables.min.css'?>" rel="stylesheet" type="text/css"/>	
         <link href="<?php echo base_url().'assets/plugins/datatables/css/jquery.datatables_themeroller.css'?>" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url().'assets/plugins/toastr/jquery.toast.min.css'?>" rel="stylesheet" type="text/css"/>
-         <link href="<?php echo base_url().'assets/plugins/summernote-master/summernote.css'?>" rel="stylesheet" type="text/css"/>
         <!-- Theme Styles -->
         <link href="<?php echo base_url().'assets/css/modern.min.css'?>" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url().'assets/css/themes/green.css'?>" class="theme-color" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url().'assets/css/custom.css'?>" rel="stylesheet" type="text/css"/>
-
+        
         <script src="<?php echo base_url().'assets/plugins/3d-bold-navigation/js/modernizr.js'?>"></script>
         <script src="<?php echo base_url().'assets/plugins/offcanvasmenueffects/js/snap.svg-min.js'?>"></script>
-
-
+    
+        
     </head>
-    <body class="page-header-fixed  compact-menu  pace-done page-sidebar-fixed">
+    <body class="page-header-fixed compact-menu pace-done page-sidebar-fixed">
         <div class="overlay"></div>
         <main class="page-content content-wrap">
             <div class="navbar">
@@ -49,9 +48,6 @@
                     <div class="logo-box">
                         <a href="<?php echo site_url('backend/dashboard');?>" class="logo-text"><span>SIBUKUR</span></a>
                     </div><!-- Logo Box -->
-                    <div class="search-button">
-                        <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
-                    </div>
                     <div class="topmenu-outer">
                         <div class="top-menu">
                             <ul class="nav navbar-nav navbar-left">
@@ -193,10 +189,10 @@
                     </div>
                     <ul class="menu accordion-menu">
                         <li><a href="<?php echo site_url('backend/dashboard');?>" class="waves-effect waves-button"><span class="menu-icon icon-home"></span><p>Dashboard</p></a></li>
-                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-pin"></span><p>Post</p><span class="arrow"></span></a>
+                        <li class="droplink active open"><a href="#" class="waves-effect waves-button"><span class="menu-icon icon-pin"></span><p>Post</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo site_url('backend/post/add_new');?>">Add New</a></li>
-                                <li><a href="<?php echo site_url('backend/post');?>">Post List</a></li>
+                                <li class="active"><a href="<?php echo site_url('backend/post');?>">Post List</a></li>
                                 <li><a href="<?php echo site_url('backend/category');?>">Category</a></li>
                                 <li><a href="<?php echo site_url('backend/tag');?>">Tag</a></li>
                             </ul>
@@ -207,16 +203,15 @@
                         <li><a href="<?php echo site_url('backend/testimonial');?>" class="waves-effect waves-button"><span class="menu-icon icon-like"></span><p>Testimonials</p></a></li>
                         <?php if($this->session->userdata('access')=='1'):?>
                         <li><a href="<?php echo site_url('backend/users');?>" class="waves-effect waves-button"><span class="menu-icon icon-user"></span><p>Users</p></a></li>
-                        <li class="droplink active open"><a href="<?php echo site_url('backend/settings');?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span><p>Settings</p><span class="arrow"></span></a>
+                        <li class="droplink"><a href="<?php echo site_url('backend/settings');?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span><p>Settings</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo site_url('backend/settings');?>">Basic</a></li>
                                 <li><a href="<?php echo site_url('backend/home_setting');?>">Home</a></li>
-                                <li class="active"><a href="<?php echo site_url('backend/about_setting');?>">About</a></li>
+                                <li><a href="<?php echo site_url('backend/about_setting');?>">About</a></li>
                                 <li><a href="<?php echo site_url('backend/staff_setting');?>">Staff</a></li>
                                 <li><a href="<?php echo site_url('backend/navbar');?>">Navbar</a></li>
                             </ul>
                         </li>
-                        
                         <?php else:?>
                         <?php endif;?>
                         <li><a href="<?php echo site_url('logout');?>" class="waves-effect waves-button"><span class="menu-icon icon-logout"></span><p>Log Out</p></a></li>
@@ -226,90 +221,68 @@
             </div><!-- Page Sidebar -->
             <div class="page-inner">
                 <div class="page-title">
-                    <h3>About Information</h3>
+                    <h3>Staff List</h3>
                     <div class="page-breadcrumb">
                         <ol class="breadcrumb">
                             <li><a href="<?php echo site_url('backend/dashboard');?>">Dashboard</a></li>
-                            <li><a href="#">Site</a></li>
-                            <li class="active">Settings</li>
+                            <li><a href="#">Setting</a></li>
+                            <li class="active">Staff Setting</li>
                         </ol>
                     </div>
                 </div>
                 <div id="main-wrapper">
                     <div class="row">
-                        <form class="form-horizontal" action="<?php echo base_url().'backend/about_setting/update'?>" method="post" enctype="multipart/form-data">
                         <div class="col-md-12">
+                           
                             <div class="panel panel-white">
-
                                 <div class="panel-body">
-                                     
-                                        <div class="form-group">
-                                            <label for="input1" class="col-sm-2 control-label">Image</label>
-                                            <div class="col-sm-10">
-                                                <input type="file" name="img_about" class="form-control" id="input1">
-                                                <p class="help-block">Image Heading harus beresolusi 456 x 470 Pixels.</p>
-                                                <img src="<?php echo base_url().'theme/images/'.$about_img;?>" width="300" class="thumbnail">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="input1" class="col-sm-2 control-label">Description</label>
-                                            <div class="col-sm-10">
-                                                <textarea name="description" class="form-control" id="summernote-description" placeholder="Description"><?php echo $about_desc;?></textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="input" class="col-sm-2 control-label">Location</label>
-                                            <div class="col-sm-10">
-                                                <textarea name="location" class="form-control"  placeholder="Location"><?php echo $about_loc;?></textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="input" class="col-sm-2 control-label">Map</label>
-                                            <div class="col-sm-10">
-                                                <textarea name="map" class="form-control"  placeholder="Map"><?php echo $about_map;?></textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="input" class="col-sm-2 control-label">Visi</label>
-                                            <div class="col-sm-10">
-                                                <textarea name="visi" class="form-control"  placeholder="Visi"><?php echo $about_visi;?></textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="input" class="col-sm-2 control-label">Misi</label>
-                                            <div class="col-sm-10">
-                                                <textarea name="misi" class="form-control"  placeholder="Misi"><?php echo $about_misi;?></textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="input1" class="col-sm-2 control-label">Image Logo</label>
-                                            <div class="col-sm-10">
-                                                <input type="file" name="logo_about" class="form-control" id="input1">
-                                                <p class="help-block">Image Logo harus beresolusi 456 x 470 Pixels.</p>
-                                                <img src="<?php echo base_url().'theme/images/'.$about_logo;?>" width="300" class="thumbnail">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <input type="hidden" name="about_id" value="<?php echo $about_id?>" required>
-                                            <div class="col-sm-offset-2 col-sm-10">
-                                                <button type="submit" class="btn btn-success btn-lg">UPDATE</button>
-                                            </div>
-                                        </div>
-
-
+                                    <a href="<?php echo site_url('backend/staff_setting/add_new');?>" class="btn btn-success m-b-sm">Add New Staff</a>
+                                    
+                                    <div class="table-responsive">
+                                        <table id="data-table" class="display table" style="width: 100%; cellspacing: 0;">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 100px;">No</th>
+                                                    <th>Image</th>
+                                                    <th>Staff Name</th>
+                                                    <th>Position</th>
+                                                    <th>WhatsApp</th>
+                                                    <th>Facebook</th>
+                                                    <th>Instagram</th>
+                                                    <th>X</th>
+                                                    <th>Tiktok</th>
+                                                    <th style="text-align: center;width: 120px;">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            <?php 
+                                                $no=0;
+                                                foreach ($data->result() as $row):
+                                                    $no++;
+                                            ?>
+                                                <tr>
+                                                    <td><?php echo $no;?></td>
+                                                    <td><img src="<?php echo base_url().'assets/depan/img/staff/'.$row->staff_image?>" width="100px"></td>
+                                                    <td><?php echo $row->staff_name;?></td>
+                                                    <td><?php echo $row->staff_position;?></td>
+                                                    <td><a href="<?php echo $row->staff_whatsapp;?>" target="_blank"><?php echo $row->staff_whatsapp;?></a></td>
+                                                    <td><a href="<?php echo $row->staff_facebook;?>" target="_blank"><?php echo $row->staff_facebook;?></a></td>
+                                                    <td><a href="<?php echo $row->staff_instagram;?>" target="_blank"><?php echo $row->staff_instagram;?></a></td>
+                                                    <td><a href="<?php echo $row->staff_x;?>" target="_blank"><?php echo $row->staff_x;?></a></td>
+                                                    <td><a href="<?php echo $row->staff_tiktok;?>" target="_blank"><?php echo $row->staff_tiktok;?></a></td>
+                                                    <td style="text-align: center;">
+                                                        <a href="<?php echo site_url('backend/staff_setting/get_edit/'.$row->staff_id);?>" class="btn btn-xs"><span class="fa fa-pencil"></span></a>
+                                                        <a href="javascript:void(0);" class="btn btn-xs btn-delete" data-id="<?php echo $row->staff_id;?>"><span class="fa fa-trash"></span></a>
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                            </tbody>
+                                            
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-
-                        </form>
                     </div><!-- Row -->
                 </div><!-- Main Wrapper -->
                 <div class="page-footer">
@@ -317,6 +290,30 @@
                 </div>
             </div><!-- Page Inner -->
         </main><!-- Page Content -->
+
+        <!--DELETE RECORD MODAL-->
+        <form action="<?php echo site_url('backend/staff_setting/delete');?>" method="post">
+            <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Delete Post</h4>
+                    </div>
+                        <div class="modal-body">
+                            <div class="alert alert-info">
+                                Anda yakin mau menghapus staff ini?
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="hidden" name="id" required>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-success">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
 
         <!-- Javascripts -->
         <script src="<?php echo base_url().'assets/plugins/jquery/jquery-2.1.4.min.js'?>"></script>
@@ -336,31 +333,50 @@
         <script src="<?php echo base_url().'assets/plugins/datatables/js/jquery.datatables.min.js'?>"></script>
         <script src="<?php echo base_url().'assets/js/modern.min.js'?>"></script>
         <script src="<?php echo base_url().'assets/plugins/toastr/jquery.toast.min.js'?>"></script>
-        <script src="<?php echo base_url().'assets/plugins/summernote-master/summernote.min.js'?>"></script>
-        
-        <script type="text/javascript">
+        <script>
             $(document).ready(function(){
-                $('#summernote-description').summernote({
-                      height: 300,
-                      toolbar: [    
-                            ['style', ['style']],
-                            ['font', ['bold', 'italic', 'underline', 'clear']],
-                            ['fontsize', ['fontsize']],
-                            ['color', ['color']],
-                            ['para', ['ul', 'ol', 'paragraph']],  
-                            ['view', ["fullscreen", "codeview", "help"]],
-                          ]
+                $('#data-table').dataTable();
 
+                //Delete Record
+                $('.btn-delete').on('click',function(){
+                    var id=$(this).data('id');
+                    $('[name="id"]').val(id);
+                    $('#DeleteModal').modal('show');
                 });
+
             });
-            
         </script>
+
         <!--Toast Message-->
         <?php if($this->session->flashdata('msg')=='success'):?>
             <script type="text/javascript">
                     $.toast({
                         heading: 'Success',
-                        text: "About Information Saved!",
+                        text: "Post Saved!",
+                        showHideTransition: 'slide',
+                        icon: 'success',
+                        hideAfter: false,
+                        position: 'bottom-right',
+                        bgColor: '#7EC857'
+                    });
+            </script>
+        <?php elseif($this->session->flashdata('msg')=='info'):?>
+            <script type="text/javascript">
+                    $.toast({
+                        heading: 'Info',
+                        text: "Post Updated!",
+                        showHideTransition: 'slide',
+                        icon: 'info',
+                        hideAfter: false,
+                        position: 'bottom-right',
+                        bgColor: '#00C9E6'
+                    });
+            </script>
+        <?php elseif($this->session->flashdata('msg')=='success-delete'):?>
+            <script type="text/javascript">
+                    $.toast({
+                        heading: 'Success',
+                        text: "Post Deleted!.",
                         showHideTransition: 'slide',
                         icon: 'success',
                         hideAfter: false,
@@ -371,6 +387,6 @@
         <?php else:?>
 
         <?php endif;?>
-
+        
     </body>
 </html>
