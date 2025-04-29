@@ -65,7 +65,7 @@
                 <!-- Right Column (Image) -->
                 <div class="col-lg-6">
                     <div class="h-100 w-100">
-                        <img src="<?php echo base_url()?>assets/depan/img/about.jpg" alt="Tentang Kami" 
+                        <img src="<?php echo base_url()?>assets/depan/img/about.png" alt="Tentang Kami" 
                             class="img-fluid rounded shadow" 
                             style="object-fit: cover; height: 100%; width: 100%;">
                     </div>
