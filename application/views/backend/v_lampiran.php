@@ -3,7 +3,7 @@
     <head>
         
         <!-- Title -->
-        <title>Users</title>
+        <title>Lampiran</title>
         
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta charset="UTF-8">
@@ -206,9 +206,9 @@
                         </li>
                         <li><a href="<?php echo site_url('backend/inbox');?>" class="waves-effect waves-button"><span class="menu-icon icon-envelope"></span><p>Inbox</p></a></li>
                         <li><a href="<?php echo site_url('backend/comment');?>" class="waves-effect waves-button"><span class="menu-icon icon-bubbles"></span><p>Comments</p></a></li>
-                        <li><a href="<?php echo site_url('backend/lampiran');?>" class="waves-effect waves-button"><span class="menu-icon icon-link"></span><p>Lampiran</p></a></li>
+                        <li class="active"><a href="<?php echo site_url('backend/lampiran');?>" class="waves-effect waves-button"><span class="menu-icon icon-link"></span><p>Lampiran</p></a></li>
                         <li><a href="<?php echo site_url('backend/subscriber');?>" class="waves-effect waves-button"><span class="menu-icon icon-users"></span><p>Subscribers</p></a></li>
-                        <li class="active"><a href="<?php echo site_url('backend/testimonial');?>" class="waves-effect waves-button"><span class="menu-icon icon-like"></span><p>Testimonials</p></a></li>
+                        <li><a href="<?php echo site_url('backend/testimonial');?>" class="waves-effect waves-button"><span class="menu-icon icon-like"></span><p>Testimonials</p></a></li>
                         <?php if($this->session->userdata('access')=='1'):?>
                         <li><a href="<?php echo site_url('backend/users');?>" class="waves-effect waves-button"><span class="menu-icon icon-user"></span><p>Users</p></a></li>
                         <li class="droplink"><a href="<?php echo site_url('backend/settings');?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span><p>Settings</p><span class="arrow"></span></a>
@@ -228,7 +228,15 @@
                 </div><!-- Page Sidebar Inner -->
             </div><!-- Page Sidebar -->
             <div class="page-inner">
-                
+                <div class="page-title">
+                    <h3>Lampiran</h3>
+                    <div class="page-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li><a href="<?php echo site_url('backend/dashboard');?>">Dashboard</a></li>
+                            <li class="active">Lampiran</li>
+                        </ol>
+                    </div>
+                </div>
                 <div id="main-wrapper">
                     <div class="row">
                         <div class="col-md-12">
@@ -241,9 +249,9 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Photo</th>
-                                                <th>Name</th>
-                                                <th>Content</th>
+                                                <th>Image</th>
+                                                <th>Title</th>
+                                                <th>Url</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -256,22 +264,18 @@
                                             <tr>
                                                 <td style="vertical-align: middle;"><?php echo $no;?></td>
                                                 <td style="vertical-align: middle;">
-                                                    <?php if(empty($row->testimonial_image)):?>
-                                                    <img class="img-circle" width="50" src="<?php echo base_url().'assets/images/user_blank.png';?>">
-                                                    <?php else:?>
-                                                    <img class="img-circle" width="50" src="<?php echo base_url().'assets/images/'.$row->testimonial_image;?>">
-                                                    <?php endif;?>
+                                                    <img width="50" src="<?php echo base_url().'assets/depan/img/lampiran/'.$row->lampiran_image;?>">
                                                 </td>
-                                                <td style="vertical-align: middle;"><?php echo $row->testimonial_name;?></td>
-                                                <td style="vertical-align: middle;"><?php echo $row->testimonial_content;?></td>
+                                                <td style="vertical-align: middle;"><?php echo $row->lampiran_title;?></td>
+                                                <td style="vertical-align: middle;"><a href="<?php echo $row->lampiran_url;?>" target="_blank"><?php echo $row->lampiran_url;?></a></td>
                                                 <td style="vertical-align: middle;">
                                                     <div class="btn-group">
                                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             Action <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                                            <li><a href="javascript:void(0);" data-toggle="modal" data-target="#ModalEdit<?php echo $row->testimonial_id;?>"><span class="icon-pencil"></span> Edit</a></li>
-                                                            <li><a href="javascript:void(0);" class="delete" data-userid="<?php echo $row->testimonial_id;?>"><span class="icon-trash"></span> Delete</a></li>
+                                                            <li><a href="javascript:void(0);" data-toggle="modal" data-target="#ModalEdit<?php echo $row->lampiran_id;?>"><span class="icon-pencil"></span> Edit</a></li>
+                                                            <li><a href="javascript:void(0);" class="delete" data-userid="<?php echo $row->lampiran_id;?>"><span class="icon-trash"></span> Delete</a></li>
                                                         </ul>
                                                     </div>
                                                 </td>
@@ -295,13 +299,13 @@
         <div class="cd-overlay"></div>
 
         <!-- Modal -->
-        <form id="add-row-form" action="<?php echo base_url().'backend/testimonial/insert'?>" method="post" enctype="multipart/form-data">
+        <form id="add-row-form" action="<?php echo base_url().'backend/lampiran/insert'?>" method="post" enctype="multipart/form-data">
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Add Testimonial</h4>
+                        <h4 class="modal-title" id="myModalLabel">Add Lampiran</h4>
                     </div>
                     <div class="modal-body">
                             
@@ -313,10 +317,11 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="form-group">
-                                        <input type="text" name="nama" class="form-control" placeholder="Name" required>
+                                        <input type="text" name="title" class="form-control" placeholder="Title" required>
                                     </div>
                                     <div class="form-group">
-                                        <textarea name="content" class="form-control" rows="6" placeholder="Content" required></textarea>
+                                        <input type="text" name="url" class="form-control" placeholder="Url" required>
+                                        <!-- <textarea name="url" class="form-control" rows="6" placeholder="Url" required></textarea> -->
                                     </div>
                                     
                                 </div>
@@ -336,28 +341,29 @@
             foreach ($data->result() as $row):
         ?>
         <!-- Modal -->
-        <form id="add-row-form" action="<?php echo base_url().'backend/testimonial/update'?>" method="post" enctype="multipart/form-data">
-        <div class="modal fade" id="ModalEdit<?php echo $row->testimonial_id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <form id="add-row-form" action="<?php echo base_url().'backend/lampiran/update'?>" method="post" enctype="multipart/form-data">
+        <div class="modal fade" id="ModalEdit<?php echo $row->lampiran_id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit Testimonial</h4>
+                        <h4 class="modal-title" id="myModalLabel">Edit Lampiran</h4>
                     </div>
                     <div class="modal-body">
                             
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                                <input type="file" name="filefoto" class="dropify" data-height="180" data-default-file="<?php echo base_url().'assets/images/'.$row->testimonial_image;?>">
+                                                <input type="file" name="filefoto" class="dropify" data-height="180" data-default-file="<?php echo base_url().'assets/depan/img/lampiran/'.$row->lampiran_image;?>">
                                         </div>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <input type="text" name="nama" value="<?php echo $row->testimonial_name;?>" class="form-control" placeholder="Name" required>
+                                            <input type="text" name="title" value="<?php echo $row->lampiran_title;?>" class="form-control" placeholder="Title" required>
                                         </div>
                                         <div class="form-group">
-                                            <textarea name="content" class="form-control" rows="6" placeholder="Content" required><?php echo $row->testimonial_content;?></textarea>
+                                            <input type="text" name="url" value="<?php echo $row->lampiran_url;?>" class="form-control" placeholder="Url" required>
+                                            <!-- <textarea name="url" class="form-control" rows="6" placeholder="Url" required><?php echo $row->lampiran_url;?></textarea> -->
                                         </div>
                                         
                                     </div>
@@ -365,7 +371,7 @@
 
                     </div>
                     <div class="modal-footer">
-                        <input type="hidden" name="testimonial_id" value="<?php echo $row->testimonial_id;?>" required>
+                        <input type="hidden" name="lampiran_id" value="<?php echo $row->lampiran_id;?>" required>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-success">Update</button>
                     </div>
@@ -376,16 +382,16 @@
 	   <?php endforeach;?>
 
        <!-- Modal hapus-->
-        <form id="add-row-form" action="<?php echo base_url().'backend/testimonial/delete'?>" method="post" enctype="multipart/form-data">
+        <form id="add-row-form" action="<?php echo base_url().'backend/lampiran/delete'?>" method="post" enctype="multipart/form-data">
         <div class="modal fade" id="ModalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Delete Testimonial</h4>
+                        <h4 class="modal-title" id="myModalLabel">Delete Lampiran</h4>
                     </div>
                     <div class="modal-body">
-                            <strong>Anda yakin mau menghapus testimonial ini?</strong>
+                            <strong>Anda yakin mau menghapus lampiran ini?</strong>
                             <div class="form-group">
                                 <input type="hidden" id="txt_kode" name="kode" class="form-control" required>
                             </div>
@@ -473,7 +479,7 @@
             <script type="text/javascript">
                     $.toast({
                         heading: 'Success',
-                        text: "New Testimonial Saved!",
+                        text: "New Lampiran Saved!",
                         showHideTransition: 'slide',
                         icon: 'success',
                         hideAfter: false,
@@ -485,7 +491,7 @@
             <script type="text/javascript">
                     $.toast({
                         heading: 'Info',
-                        text: "Testimonial updated!",
+                        text: "Lampiran updated!",
                         showHideTransition: 'slide',
                         icon: 'info',
                         hideAfter: false,
@@ -497,7 +503,7 @@
             <script type="text/javascript">
                     $.toast({
                         heading: 'Success',
-                        text: "Testimonial Deleted!.",
+                        text: "Lampiran Deleted!.",
                         showHideTransition: 'slide',
                         icon: 'success',
                         hideAfter: false,
