@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
         <!-- Title -->
-        <title>Add New Staff</title>
-
+        <title>Galery</title>
+        
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta charset="UTF-8">
         <meta name="description" content="" />
         <meta name="keywords" content="" />
-        <meta name="author" content="M Fikri Setiadi" />
+        <meta name="author" content="" />
         <link rel="shortcut icon" href="<?php echo base_url().'assets/images/favicon.png'?>">
-
         <!-- Styles -->
         <link href="<?php echo base_url().'assets/plugins/pace-master/themes/blue/pace-theme-flash.css'?>" rel="stylesheet"/>
         <link href="<?php echo base_url().'assets/plugins/uniform/css/uniform.default.min.css'?>" rel="stylesheet"/>
         <link href="<?php echo base_url().'assets/plugins/bootstrap/css/bootstrap.min.css'?>" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url().'assets/plugins/fontawesome/css/font-awesome.css'?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url().'assets/plugins/line-icons/simple-line-icons.css'?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url().'assets/plugins/offcanvasmenueffects/css/menu_cornerbox.css'?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url().'assets/plugins/waves/waves.min.css'?>" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo base_url().'assets/plugins/line-icons/simple-line-icons.css'?>" rel="stylesheet" type="text/css"/>	
+        <link href="<?php echo base_url().'assets/plugins/offcanvasmenueffects/css/menu_cornerbox.css'?>" rel="stylesheet" type="text/css"/>	
+        <link href="<?php echo base_url().'assets/plugins/waves/waves.min.css'?>" rel="stylesheet" type="text/css"/>	
         <link href="<?php echo base_url().'assets/plugins/switchery/switchery.min.css'?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url().'assets/plugins/3d-bold-navigation/css/style.css'?>" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo base_url().'assets/plugins/3d-bold-navigation/css/style.css'?>" rel="stylesheet" type="text/css"/>	
         <link href="<?php echo base_url().'assets/plugins/slidepushmenus/css/component.css'?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url().'assets/plugins/datatables/css/jquery.datatables.min.css'?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url().'assets/plugins/datatables/css/jquery.datatables_themeroller.css'?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url().'assets/plugins/summernote-master/summernote.css'?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url().'assets/css/dropify.min.css'?>" rel="stylesheet" type="text/css">
-
+        <link href="<?php echo base_url().'assets/plugins/datatables/css/jquery.datatables.min.css'?>" rel="stylesheet" type="text/css"/>	
+        <link href="<?php echo base_url().'assets/plugins/datatables/css/jquery.datatables_themeroller.css'?>" rel="stylesheet" type="text/css"/>	
+        <link href="<?php echo base_url().'assets/plugins/bootstrap-datepicker/css/datepicker3.css'?>" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo base_url().'assets/plugins/select2/css/select2.min.css'?>" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo base_url().'assets/plugins/toastr/jquery.toast.min.css'?>" rel="stylesheet" type="text/css"/>
         <!-- Theme Styles -->
         <link href="<?php echo base_url().'assets/css/modern.min.css'?>" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url().'assets/css/themes/green.css'?>" class="theme-color" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url().'assets/css/custom.css'?>" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo base_url().'assets/css/dropify.min.css'?>" rel="stylesheet" type="text/css">
 
         <script src="<?php echo base_url().'assets/plugins/3d-bold-navigation/js/modernizr.js'?>"></script>
         <script src="<?php echo base_url().'assets/plugins/offcanvasmenueffects/js/snap.svg-min.js'?>"></script>
-
-
+        
+       
     </head>
     <body class="page-header-fixed  compact-menu  pace-done page-sidebar-fixed">
         <div class="overlay"></div>
+        
         <main class="page-content content-wrap">
             <div class="navbar">
                 <div class="navbar-inner">
@@ -205,20 +207,21 @@
                         <li><a href="<?php echo site_url('backend/inbox');?>" class="waves-effect waves-button"><span class="menu-icon icon-envelope"></span><p>Inbox</p></a></li>
                         <li><a href="<?php echo site_url('backend/comment');?>" class="waves-effect waves-button"><span class="menu-icon icon-bubbles"></span><p>Comments</p></a></li>
                         <li><a href="<?php echo site_url('backend/lampiran');?>" class="waves-effect waves-button"><span class="menu-icon icon-link"></span><p>Lampiran</p></a></li>
-                        <li><a href="<?php echo site_url('backend/galery');?>" class="waves-effect waves-button"><span class="menu-icon icon-camera"></span><p>Galery</p></a></li>
+                        <li class="active"><a href="<?php echo site_url('backend/galery');?>" class="waves-effect waves-button"><span class="menu-icon icon-camera"></span><p>Galery</p></a></li>
                         <li><a href="<?php echo site_url('backend/subscriber');?>" class="waves-effect waves-button"><span class="menu-icon icon-users"></span><p>Subscribers</p></a></li>
                         <li><a href="<?php echo site_url('backend/testimonial');?>" class="waves-effect waves-button"><span class="menu-icon icon-like"></span><p>Testimonials</p></a></li>
                         <?php if($this->session->userdata('access')=='1'):?>
                         <li><a href="<?php echo site_url('backend/users');?>" class="waves-effect waves-button"><span class="menu-icon icon-user"></span><p>Users</p></a></li>
-                        <li class="droplink active open"><a href="<?php echo site_url('backend/settings');?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span><p>Settings</p><span class="arrow"></span></a>
+                        <li class="droplink"><a href="<?php echo site_url('backend/settings');?>" class="waves-effect waves-button"><span class="menu-icon icon-settings"></span><p>Settings</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo site_url('backend/settings');?>">Basic</a></li>
                                 <li><a href="<?php echo site_url('backend/home_setting');?>">Home</a></li>
                                 <li><a href="<?php echo site_url('backend/about_setting');?>">About</a></li>
-                                <li class="active"><a href="<?php echo site_url('backend/staff_setting');?>">Staff</a></li>
+                                <li><a href="<?php echo site_url('backend/staff_setting');?>">Staff</a></li>
                                 <li><a href="<?php echo site_url('backend/navbar');?>">Navbar</a></li>
                             </ul>
-                        </li><?php else:?>
+                        </li>
+                        <?php else:?>
                         <?php endif;?>
                         <li><a href="<?php echo site_url('logout');?>" class="waves-effect waves-button"><span class="menu-icon icon-logout"></span><p>Log Out</p></a></li>
                         
@@ -227,81 +230,63 @@
             </div><!-- Page Sidebar -->
             <div class="page-inner">
                 <div class="page-title">
-                    <h3>Add New Staff</h3>
+                    <h3>Galery</h3>
                     <div class="page-breadcrumb">
                         <ol class="breadcrumb">
                             <li><a href="<?php echo site_url('backend/dashboard');?>">Dashboard</a></li>
-                            <li><a href="#">Staff</a></li>
-                            <li class="active">Add New</li>
+                            <li class="active">Galery</li>
                         </ol>
                     </div>
                 </div>
                 <div id="main-wrapper">
                     <div class="row">
-                        <form action="<?php echo base_url().'backend/staff_setting/submit'?>" method="post" enctype="multipart/form-data">
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <div class="panel panel-white">
-
+                                
                                 <div class="panel-body">
-
-                                        <div class="form-group">
-                                            <label>Name</label>
-                                            <input type="text" name="name" class="form-control name" placeholder="Name" required>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Position</label>
-                                            <input type="text" name="position" class="form-control position" placeholder="Position" required>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>URL WhatsApp</label>
-                                            <input type="text" name="whatsapp" class="form-control whatsapp" placeholder="URL WhatsApp">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>URL Facebook</label>
-                                            <input type="text" name="facebook" class="form-control facebook" placeholder="URL Facebook">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>URL Instagram</label>
-                                            <input type="text" name="instagram" class="form-control instagram" placeholder="URL Instagram">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>URL X</label>
-                                            <input type="text" name="x" class="form-control x" placeholder="URL X">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>URL Tiktok</label>
-                                            <input type="text" name="tiktok" class="form-control tiktok" placeholder="URL Tiktok">
-                                        </div>                                      
-
+                                <button type="button" class="btn btn-success m-b-sm" data-toggle="modal" data-target="#myModal">Add New</button>
+                                  
+                                    <table id="mytable" class="display table" style="width: 100%; cellspacing: 0;">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Image</th>
+                                                <th>Title</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php 
+                                                $no=0;
+                                                foreach ($data->result() as $row):
+                                                    $no++;
+                                            ?>
+                                            <tr>
+                                                <td style="vertical-align: middle;"><?php echo $no;?></td>
+                                                <td style="vertical-align: middle;">
+                                                    <img width="50" src="<?php echo base_url().'assets/depan/img/galery/'.$row->galery_image;?>">
+                                                </td>
+                                                <td style="vertical-align: middle;"><?php echo $row->galery_title;?></td>                                                
+                                                <td style="vertical-align: middle;">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                            Action <span class="caret"></span>
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                                            <li><a href="javascript:void(0);" data-toggle="modal" data-target="#ModalEdit<?php echo $row->galery_id;?>"><span class="icon-pencil"></span> Edit</a></li>
+                                                            <li><a href="javascript:void(0);" class="delete" data-userid="<?php echo $row->galery_id;?>"><span class="icon-trash"></span> Delete</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach;?>
+                                        </tbody>
+                                       </table>  
                                 </div>
                             </div>
+                                   
+                            
                         </div>
-
-                        <div class="col-md-4">
-                            <div class="panel panel-white">
-
-                                <div class="panel-body">
-                                        <div class="form-group">
-                                            <label>Image</label>
-                                            <input type="file" name="filefoto" class="dropify" data-height="190" required>
-                                        </div>
-                                        
-                                        
-                                        <div class="btn-group btn-group-justified" role="group">
-                                            <button type="submit" class="btn btn-primary btn-lg" style="width:100%"><span class="icon-cursor"></span> SUBMIT</button>
-                                        </div>
-                                </div>
-                            </div>  
-
-                        </div>
-
-                        </form>
                     </div><!-- Row -->
                 </div><!-- Main Wrapper -->
                 <div class="page-footer">
@@ -309,10 +294,113 @@
                 </div>
             </div><!-- Page Inner -->
         </main><!-- Page Content -->
+        
+        <div class="cd-overlay"></div>
+
+        <!-- Modal -->
+        <form id="add-row-form" action="<?php echo base_url().'backend/galery/insert'?>" method="post" enctype="multipart/form-data">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Add Galery</h4>
+                    </div>
+                    <div class="modal-body">
+                            
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="file" name="filefoto" class="dropify" data-height="180" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <input type="text" name="title" class="form-control" placeholder="Title" required>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+
+        <?php 
+            foreach ($data->result() as $row):
+        ?>
+        <!-- Modal -->
+        <form id="add-row-form" action="<?php echo base_url().'backend/galery/update'?>" method="post" enctype="multipart/form-data">
+        <div class="modal fade" id="ModalEdit<?php echo $row->galery_id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Edit Galery</h4>
+                    </div>
+                    <div class="modal-body">
+                            
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                                <input type="file" name="filefoto" class="dropify" data-height="180" data-default-file="<?php echo base_url().'assets/depan/img/galery/'.$row->galery_image;?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <input type="text" name="title" value="<?php echo $row->galery_title;?>" class="form-control" placeholder="Title" required>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="galery_id" value="<?php echo $row->galery_id;?>" required>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-success">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+	   <?php endforeach;?>
+
+       <!-- Modal hapus-->
+        <form id="add-row-form" action="<?php echo base_url().'backend/galery/delete'?>" method="post" enctype="multipart/form-data">
+        <div class="modal fade" id="ModalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Delete Galery</h4>
+                    </div>
+                    <div class="modal-body">
+                            <strong>Anda yakin mau menghapus galery ini?</strong>
+                            <div class="form-group">
+                                <input type="hidden" id="txt_kode" name="kode" class="form-control" required>
+                            </div>
+                            
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="submit" id="add-row" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
 
         <!-- Javascripts -->
         <script src="<?php echo base_url().'assets/plugins/jquery/jquery-2.1.4.min.js'?>"></script>
         <script src="<?php echo base_url().'assets/plugins/jquery-ui/jquery-ui.min.js'?>"></script>
+        <script src="<?php echo base_url().'assets/plugins/select2/js/select2.min.js'?>" type="text/javascript"></script>
         <script src="<?php echo base_url().'assets/plugins/pace-master/pace.min.js'?>"></script>
         <script src="<?php echo base_url().'assets/plugins/jquery-blockui/jquery.blockui.js'?>"></script>
         <script src="<?php echo base_url().'assets/plugins/bootstrap/js/bootstrap.min.js'?>"></script>
@@ -326,24 +414,97 @@
         <script src="<?php echo base_url().'assets/plugins/jquery-mockjax-master/jquery.mockjax.js'?>"></script>
         <script src="<?php echo base_url().'assets/plugins/moment/moment.js'?>"></script>
         <script src="<?php echo base_url().'assets/plugins/datatables/js/jquery.datatables.min.js'?>"></script>
+        <script src="<?php echo base_url().'assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js'?>"></script>
         <script src="<?php echo base_url().'assets/js/modern.min.js'?>"></script>
         <script src="<?php echo base_url().'assets/js/dropify.min.js'?>"></script>
-        <script src="<?php echo base_url().'assets/plugins/summernote-master/summernote.min.js'?>"></script>
-        <script>
+        <script src="<?php echo base_url().'assets/plugins/toastr/jquery.toast.min.js'?>"></script>
 
-            $(document).ready(function(){                
-
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#mytable').DataTable();
                 $('.dropify').dropify({
+                    defaultFile: '',
                     messages: {
-                        default: 'Drag atau drop untuk memilih gambar',
+                        default: 'Drag atau drop untuk memilih Photo',
                         replace: 'Ganti',
                         remove:  'Hapus',
                         error:   'error'
                     }
                 });
-                
+
+                $('.delete').on('click',function(){
+                    var userid=$(this).data('userid');
+                    $('#ModalDelete').modal('show');
+                    $('[name="kode"]').val(userid);
+                });
             });
         </script>
+
+
+        <!--Toast Message-->
+        <?php if($this->session->flashdata('msg')=='error'):?>
+            <script type="text/javascript">
+                    $.toast({
+                        heading: 'Error',
+                        text: "Password and Confirm Password doesn't match.",
+                        showHideTransition: 'slide',
+                        icon: 'error',
+                        hideAfter: false,
+                        position: 'bottom-right',
+                        bgColor: '#FF4859'
+                    });
+            </script>
+        <?php elseif($this->session->flashdata('msg')=='error-img'):?>
+            <script type="text/javascript">
+                    $.toast({
+                        heading: 'Error',
+                        text: "Image Upload Error.",
+                        showHideTransition: 'slide',
+                        icon: 'error',
+                        hideAfter: false,
+                        position: 'bottom-right',
+                        bgColor: '#FF4859'
+                    });
+            </script>
+        <?php elseif($this->session->flashdata('msg')=='success'):?>
+            <script type="text/javascript">
+                    $.toast({
+                        heading: 'Success',
+                        text: "New Galery Saved!",
+                        showHideTransition: 'slide',
+                        icon: 'success',
+                        hideAfter: false,
+                        position: 'bottom-right',
+                        bgColor: '#7EC857'
+                    });
+            </script>
+        <?php elseif($this->session->flashdata('msg')=='info'):?>
+            <script type="text/javascript">
+                    $.toast({
+                        heading: 'Info',
+                        text: "Galery updated!",
+                        showHideTransition: 'slide',
+                        icon: 'info',
+                        hideAfter: false,
+                        position: 'bottom-right',
+                        bgColor: '#00C9E6'
+                    });
+            </script>
+        <?php elseif($this->session->flashdata('msg')=='success-hapus'):?>
+            <script type="text/javascript">
+                    $.toast({
+                        heading: 'Success',
+                        text: "Galery Deleted!.",
+                        showHideTransition: 'slide',
+                        icon: 'success',
+                        hideAfter: false,
+                        position: 'bottom-right',
+                        bgColor: '#7EC857'
+                    });
+            </script>
+        <?php else:?>
+
+        <?php endif;?>
 
     </body>
 </html>
