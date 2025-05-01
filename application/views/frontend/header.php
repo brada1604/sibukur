@@ -1,3 +1,4 @@
+
 <div class="container-fluid nav-bar bg-transparent">
     <nav class="main-nav navbar navbar-expand-lg bg-white navbar-light py-0">
         <div class="container px-4">
@@ -51,4 +52,5 @@
         </div>
     </nav>
 </div>
+                
 

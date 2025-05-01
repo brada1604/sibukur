@@ -14,40 +14,51 @@
     // Initiate WOW.js
     new WOW().init();
 
-    // Sticky Navbar
-    $(window).on('scroll', function () {
-        $('.nav-bar').toggleClass('sticky-top', $(this).scrollTop() > 45);
-    });
+    // navbar Carousel
 
-    // Back to top button
     $(window).on('scroll', function () {
-        $('.back-to-top').fadeToggle($(this).scrollTop() > 300, 'slow');
-    });
-
-    $('.back-to-top').on('click', function () {
-        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
-        return false;
+        if ($(this).scrollTop() > 10) {
+            $('.nav-bar').addClass('sticky-top no-margin');
+        } else {
+            $('.nav-bar').removeClass('sticky-top no-margin');
+        }
     });
 
     // Header Carousel
+    
+    $(document).ready(function () {
+    const firstIndex = $(".header-carousel .owl-carousel-item").first().data("text-index");
+    $(".header-text").removeClass("active").addClass("d-none");
+    $(".header-text[data-text-index='" + firstIndex + "']").addClass("active").removeClass("d-none");
+    });
+  
     $(".header-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1500,
         items: 1,
-        dots: true,
         loop: true,
-        nav: true,
-        navText: [
-            '<i class="bi bi-chevron-left"></i>',
-            '<i class="bi bi-chevron-right"></i>'
-        ],
+        dots: false,
+        nav: false,
+        animateOut: 'fadeOut',   
+        animateIn: 'fadeIn',         
         onChanged: function (event) {
-            const index = $(event.target).find(".owl-item.active .owl-carousel-item").data("text-index");
-            $(".header-text").removeClass("active").addClass("d-none");
-            $(".header-text").eq(index).addClass("active").removeClass("d-none");
+          const index = $(event.target)
+            .find(".owl-item.active .owl-carousel-item")
+            .data("text-index");
+          $(".header-text").removeClass("active").addClass("d-none");
+          $(".header-text[data-text-index='" + index + "']").addClass("active").removeClass("d-none");
         }
-    });
-
+      });
+      
+    
+      $("#nextSlide").on("click", function () {
+        $(".header-carousel").trigger("next.owl.carousel");
+      });
+      $("#prevSlide").on("click", function () {
+        $(".header-carousel").trigger("prev.owl.carousel");
+      });
+      
+      
     // Testimonials Carousel
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,

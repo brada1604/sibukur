@@ -48,64 +48,57 @@
 <?php echo $header;?>
 <!-- Navbar End -->
 
-
+<div class="parallax-header">
 
 <!-- Carousel Start -->
-<div class="container-fluid header bg-white p-0">
-    <div class="container">
-        <div class="row g-0 align-items-center flex-column-reverse flex-md-row" style="min-height: 500px;">
-            <!-- TEKS KIRI -->
-            <div class="col-md-6 p-3 d-flex align-items-center">
-                <div class="w-100">
-                    <div id="header-texts">
-                        <?php $no1 = -1;?>
-                        <?php foreach($latest_post->result() as $row1):?>
-                        <div class="header-text owl-carousel-item" data-text-index="<?php echo $no1++;?>">
-                            <h1 class="display-6 fw-bold mb-4"><?php echo $row1->post_title;?></h1>
-                            <p class="mb-4">
-                            <?php 
-                                $desc = $row1->post_description;
-                                echo strlen($desc) > 100 ? substr($desc, 0, 100) . '...' : $desc;
-                            ?>
+<!-- Header Start -->
+<div class="container py-5">
+    <div class="row align-items-center">
+
+        <!-- Card Teks -->
+        <div class="col-md-6 mb-4 mb-md-0 order-2 order-md-1">
+            <div class="card shadow-lg border-0 rounded-4 p-4 h-100 position-relative">
+                <div id="header-texts">
+                    <?php $no = 0; ?>
+                    <?php foreach ($latest_post->result() as $row): ?>
+                        <div class="header-text <?php echo $no === 0 ? 'active' : 'd-none'; ?>" data-text-index="<?php echo $no; ?>">
+                            <span class="badge bg-success mb-2">#<?php echo ucwords($row->category_name); ?></span>
+                            <h2 class="fw-bold mt-2 mb-3"><?php echo $row->post_title; ?></h2>
+                            <p>
+                                <?php 
+                                    $desc = $row->post_description;
+                                    echo strlen($desc) > 150 ? substr($desc, 0, 150) . '...' : $desc;
+                                ?>
                             </p>
-                            <a href="<?php echo site_url('blog/'.$row1->post_slug);?>" target="_blank" class="btn btn-primary py-2 px-4 rounded">Selengkapnya ></a>
+                            <a href="<?php echo site_url('blog/' . $row->post_slug); ?>" class="btn btn-success mt-3">Selengkapnya ></a>
                         </div>
-                        <?php endforeach;?>
-
-                        <!-- <div class="header-text owl-carousel-item" data-text-index="0">
-                            <h1 class="display-6 fw-bold mb-4">Penilaian Lomba Kebersihan Lingkungan</h1>
-                            <p class="mb-4">Sukan Tengah, 13 Desember 2024 — Dalam rangka merayakan hari jadi Kampung Sukan Tengah ke-215 serta Hari Bhakti Transmigrasi ke-72, Pemerintah Kampung bersama panitia mengadakan penilaian lomba kebersihan lingkungan.</p>
-                            <a href="#" class="btn btn-primary py-2 px-4 rounded">Selengkapnya ></a>
-                        </div>
-                        <div class="header-text owl-carousel-item" data-text-index="1">
-                            <h1 class="display-6 fw-bold mb-4">Kunjungan Dinas PUPR Kabupaten Berau</h1>
-                            <p class="mb-4">Dinas PUPR Kabupaten Berau mengunjungi lokasi PAM Kampung Inaran untuk meninjau lokasi pelatihan KP-SPAM Mandiri. Bumk Inaran juga diundang sebagai narasumber pada kegiatan tersebut.</p>
-                            <a href="#" class="btn btn-primary py-2 px-4 rounded">Selengkapnya ></a>
-                        </div> -->
-                    </div>
+                        <?php $no++; ?>
+                    <?php endforeach; ?>
                 </div>
-            </div>
 
-            <!-- GAMBAR KANAN -->
-            <div class="col-md-6">
-                <div class="owl-carousel header-carousel">
-                    <?php $no2 = -1;?>
-                    <?php foreach($latest_post->result() as $row2):?>
-                    <div class="owl-carousel-item" data-text-index="<?php echo $no2++;?>">
-                        <img class="img-fluid w-100 h-100 object-fit-cover" src="<?php echo base_url().'assets/images/thumb/'.$row2->post_image?>" alt="<?php echo $row2->post_title;?>">
-                    </div>
-                    <?php endforeach;?>
-
-                    <!-- <div class="owl-carousel-item" data-text-index="0">
-                        <img class="img-fluid w-100 h-100 object-fit-cover" src="<?php echo base_url()?>assets/depan/img/carousel-1.jpg" alt="Lomba Kebersihan">
-                    </div>
-                    <div class="owl-carousel-item" data-text-index="1">
-                        <img class="img-fluid w-100 h-100 object-fit-cover" src="<?php echo base_url()?>assets/depan/img/carousel-2.png" alt="Kunjungan PUPR">
-                    </div> -->
+                <!-- Panah Carousel -->
+                <div class="custom-nav mt-3">
+                    <button class="btn btn-success rounded-circle me-2" id="prevSlide"><i class="bi bi-chevron-left"></i></button>
+                    <button class="btn btn-success rounded-circle" id="nextSlide"><i class="bi bi-chevron-right"></i></button>
                 </div>
             </div>
         </div>
+
+        <!-- Gambar Carousel -->
+        <div class="col-md-6 order-1 order-md-2">
+            <div class="owl-carousel header-carousel">
+                <?php $no = 0; ?>
+                <?php foreach ($latest_post->result() as $row): ?>
+                    <div class="owl-carousel-item" data-text-index="<?php echo $no++; ?>">
+                        <img class="img-fluid shadow" src="<?php echo base_url('assets/images/thumb/' . $row->post_image); ?>" alt="<?php echo $row->post_title; ?>">
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
     </div>
+</div>
+<!-- Header End -->
 </div>
 <!-- Carousel End -->
 
