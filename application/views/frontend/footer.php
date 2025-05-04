@@ -34,13 +34,17 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
+                    <form class="form-inline" action="<?php echo site_url('subscribe');?>" method="post">
                     <h5 class="text-white mb-4">Berlangganan Info</h5>
                     <p>Dapatkan info terbaru seputar desa Pegat Bukur langsung ke email Anda.</p>
                     <div class="position-relative" style="max-width: 400px;">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="email" placeholder="Email Anda">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Daftar</button>
+                        <input type="hidden" name="url" value="<?php echo site_url();?>" required>
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="email" placeholder="Email Anda" name="email" required >
+                        <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Daftar</button>
                     </div>
+                    </form> 
                 </div>
+                <div><?php echo $this->session->flashdata('message');?></div>
             </div>
             <hr class="text-secondary mt-5">
 
