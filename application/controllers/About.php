@@ -5,6 +5,7 @@ class About extends CI_Controller{
 		parent::__construct();
 		$this->load->model('Visitor_model','visitor_model');
 		$this->load->model('Staff_model','staff_model');
+		$this->load->model('Galery_model','galery_model');
         $this->visitor_model->count_visitor();
         $this->load->helper('text');
         error_reporting(0);
@@ -22,9 +23,10 @@ class About extends CI_Controller{
 		$data['about_logo'] = $about->about_logo;
 		$data['list_staff'] = $this->staff_model->get_all_staff();
 		$v['logo'] =  $site_info->site_logo_header;
+		$z['footer_galery'] = $this->galery_model->get_footer_galery();
 		$data['icon'] = $site_info->site_favicon;
 		$data['header'] = $this->load->view('frontend/header',$v,TRUE);
-		$data['footer'] = $this->load->view('frontend/footer','',TRUE);
+		$data['footer'] = $this->load->view('frontend/footer',$z,TRUE);
 		$this->load->view('frontend/about_view',$data);
 	}
 
@@ -34,6 +36,7 @@ class About extends CI_Controller{
 		$data['about_img'] = $about->about_image;
 		$data['about_desc'] = $about->about_description;
 		$v['logo'] =  $site_info->site_logo_header;
+		$z['footer_galery'] = $this->galery_model->get_footer_galery();
 		$data['icon'] = $site_info->site_favicon;
 		$data['header'] = $this->load->view('header',$v,TRUE);
 		$data['footer'] = $this->load->view('footer','',TRUE);

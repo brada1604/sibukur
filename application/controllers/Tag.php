@@ -8,6 +8,7 @@ class Tag extends CI_Controller{
 		$this->load->model('Visitor_model','visitor_model');
 		$this->load->model('Site_model','site_model');
 		$this->load->model('Category_model','category_model');
+		$this->load->model('Galery_model','galery_model');
         $this->visitor_model->count_visitor();
         $this->load->helper('text');
 		error_reporting(0);

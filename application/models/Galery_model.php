@@ -16,4 +16,13 @@ class Galery_model extends CI_Model{
 		$query = $this->db->get();
 		return $query;
 	}
+
+	function get_footer_galery(){
+		$this->db->select('tbl_galery.*');
+		$this->db->from('tbl_galery');
+		$this->db->order_by('galery_date', 'DESC');
+		$this->db->limit(6);
+		$query = $this->db->get();
+		return $query;
+	}
 }

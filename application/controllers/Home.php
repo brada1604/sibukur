@@ -10,6 +10,7 @@ class Home extends CI_Controller {
 		$this->load->model('Staff_model','staff_model');
 		$this->load->model('Category_model','category_model');
 		$this->load->model('Ads_model','ads_model');
+		$this->load->model('Galery_model','galery_model');
         $this->visitor_model->count_visitor();
         $this->load->helper('text');
 	}
@@ -42,9 +43,10 @@ class Home extends CI_Controller {
 		$data['testimonial'] = $this->db->get('tbl_testimonial');
 		$site_info = $this->db->get('tbl_site', 1)->row();
 		$v['logo'] =  $site_info->site_logo_header;
+		$z['footer_galery'] = $this->galery_model->get_footer_galery();
 		$data['icon'] = $site_info->site_favicon;
 		$data['header'] = $this->load->view('frontend/header',$v,TRUE);
-		$data['footer'] = $this->load->view('frontend/footer','',TRUE);
+		$data['footer'] = $this->load->view('frontend/footer',$z,TRUE);
 		// $this->load->view('home_view',$data);
 		$this->load->view('frontend/landing-page',$data);
 	}
@@ -70,6 +72,7 @@ class Home extends CI_Controller {
 		$data['testimonial'] = $this->db->get('tbl_testimonial');
 		$site_info = $this->db->get('tbl_site', 1)->row();
 		$v['logo'] =  $site_info->site_logo_header;
+		$z['footer_galery'] = $this->galery_model->get_footer_galery();
 		$data['icon'] = $site_info->site_favicon;
 		$data['header'] = $this->load->view('header',$v,TRUE);
 		$data['footer'] = $this->load->view('footer','',TRUE);

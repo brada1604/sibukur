@@ -6,12 +6,14 @@ class Contact extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Contact_model','contact_model');
 		$this->load->model('Visitor_model','visitor_model');
+		$this->load->model('Galery_model','galery_model');
         $this->visitor_model->count_visitor();
 	}
 	function index(){
 		//$this->output->enable_profiler(TRUE);
 		$site_info = $this->db->get('tbl_site', 1)->row();
 		$v['logo'] =  $site_info->site_logo_header;
+		$z['footer_galery'] = $this->galery_model->get_footer_galery();
 		$data['icon'] = $site_info->site_favicon;
 		$data['header'] = $this->load->view('header',$v,TRUE);
 		$data['footer'] = $this->load->view('footer','',TRUE);

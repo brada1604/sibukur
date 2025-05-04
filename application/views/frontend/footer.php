@@ -16,21 +16,23 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4">Tautan Cepat</h5>
-                    <a class="btn btn-link text-white-50" href="#">Profil Desa</a>
-                    <a class="btn btn-link text-white-50" href="#">Berita & Kegiatan</a>
-                    <a class="btn btn-link text-white-50" href="#">Statistik Penduduk</a>
-                    <a class="btn btn-link text-white-50" href="#">Produk UMKM</a>
-                    <a class="btn btn-link text-white-50" href="#">Galeri</a>
+                    <a class="btn btn-link text-white-50" href="<?php echo base_url()?>about">Profil Desa</a>
+                    <a class="btn btn-link text-white-50" href="<?php echo base_url()?>blog">Berita & Kegiatan</a>
+                    <a class="btn btn-link text-white-50" href="<?php echo base_url()?>data-kampung">Statistik Penduduk</a>
+                    <a class="btn btn-link text-white-50" href="<?php echo base_url()?>ads">Produk UMKM</a>
+                    <a class="btn btn-link text-white-50" href="<?php echo base_url()?>galery">Galeri</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4">Galeri Desa</h5>
                     <div class="row g-2 pt-2">
-                        <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" alt=""></div>
-                        <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-2.jpg" alt=""></div>
-                        <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-3.jpg" alt=""></div>
-                        <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-4.jpg" alt=""></div>
-                        <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-5.jpg" alt=""></div>
-                        <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-6.jpg" alt=""></div>
+                        <?php foreach($footer_galery->result() as $row_z):?>
+                        <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/galery/<?php echo $row_z->galery_image;?>" alt=""></div>
+                        <?php endforeach;?>
+                        <!-- <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-2.jpg" alt=""></div> -->
+                        <!-- <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-3.jpg" alt=""></div> -->
+                        <!-- <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-4.jpg" alt=""></div> -->
+                        <!-- <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-5.jpg" alt=""></div> -->
+                        <!-- <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-6.jpg" alt=""></div> -->
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">

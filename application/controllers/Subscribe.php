@@ -6,6 +6,7 @@ class Subscribe extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Visitor_model','visitor_model');
 		$this->load->model('Subscribe_model','subscribe_model');
+		$this->load->model('Galery_model','galery_model');
         $this->visitor_model->count_visitor();
         $this->load->helper('text');
 	}

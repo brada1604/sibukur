@@ -6,6 +6,7 @@ class Ads extends CI_Controller{
 		$this->load->model('Ads_model','ads_model');
 		$this->load->model('Visitor_model','visitor_model');
 		$this->load->model('Site_model','site_model');
+		$this->load->model('Galery_model','galery_model');
         $this->visitor_model->count_visitor();
         $this->load->helper('text');
         error_reporting(0);
@@ -16,10 +17,11 @@ class Ads extends CI_Controller{
 		$about = $this->db->get('tbl_about', 1)->row();
 		$data['list_ads'] = $this->ads_model->get_all_ads_by_date();
 		$v['logo'] =  $site_info->site_logo_header;
+		$z['footer_galery'] = $this->galery_model->get_footer_galery();
 		$data['icon'] = $site_info->site_favicon;
 		$data['site_title'] = "Ads";
 		$data['header'] = $this->load->view('frontend/header',$v,TRUE);
-		$data['footer'] = $this->load->view('frontend/footer','',TRUE);
+		$data['footer'] = $this->load->view('frontend/footer',$z,TRUE);
 		$this->load->view('frontend/ads_view',$data);
 	}
 

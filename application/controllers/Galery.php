@@ -15,10 +15,11 @@ class Galery extends CI_Controller{
 		$about = $this->db->get('tbl_about', 1)->row();
 		$data['list_galery'] = $this->galery_model->get_all_galery_by_date();
 		$v['logo'] =  $site_info->site_logo_header;
+		$z['footer_galery'] = $this->galery_model->get_footer_galery();
 		$data['icon'] = $site_info->site_favicon;
 		$data['site_title'] = "Galery";
 		$data['header'] = $this->load->view('frontend/header',$v,TRUE);
-		$data['footer'] = $this->load->view('frontend/footer','',TRUE);
+		$data['footer'] = $this->load->view('frontend/footer',$z,TRUE);
 		$this->load->view('frontend/galery_view',$data);
 	}
 }
