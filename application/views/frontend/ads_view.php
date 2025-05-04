@@ -113,7 +113,7 @@
                               <div id="tab-1" class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
-                                        <img class="img-fluid" src="<?php echo base_url().'<?php echo base_url()?>assets/depan/img/ads/'.$row4->ads_image?>" alt="<?php echo $row4->ads_title;?>">
+                                        <img class="img-fluid" src="<?php echo base_url().'assets/depan/img/ads/'.$row4->ads_image?>" alt="<?php echo $row4->ads_title;?>">
                                         <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3"><?php echo $row4->ads_category;?></div>
                                     </div>
                                     <div class="p-4">
