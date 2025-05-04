@@ -532,7 +532,7 @@
                             <!-- Item End -->
 
                     <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.4s">
-                        <a class="btn btn-primary py-3 px-5" href="#">Lihat Semua Unggulan</a>
+                        <a class="btn btn-primary py-3 px-5" href="<?php echo base_url()?>unggulan-kampung/">Lihat Semua Unggulan</a>
                     </div>
                 </div>
             </div>

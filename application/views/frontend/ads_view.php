@@ -10,7 +10,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="assets/depan/img/Icon title.png" rel="icon">
+    <link href="<?php echo base_url()?>assets/depan/img/Icon title.png" rel="icon">
     
 
     <!-- Google Web Fonts -->
@@ -23,14 +23,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="assets/depan/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="assets/depan/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/depan/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/depan/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="assets/depan/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/depan/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="assets/depan/css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/depan/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -73,7 +73,7 @@
             <!-- Gambar -->
             <div class="col-lg-8">
                 <div class="h-100 w-100">
-                    <img src="assets/depan/img/about.png" alt="Potensi Unggulan Desa Pegat Bukur" 
+                    <img src="<?php echo base_url()?>assets/depan/img/about.png" alt="Potensi Unggulan Desa Pegat Bukur" 
                          class="img-fluid rounded shadow" 
                          style="height: 100%; width: 100%; object-fit: cover;">
                 </div>
@@ -113,7 +113,7 @@
                               <div id="tab-1" class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                                 <div class="property-item rounded overflow-hidden">
                                     <div class="position-relative overflow-hidden">
-                                        <img class="img-fluid" src="<?php echo base_url().'assets/depan/img/ads/'.$row4->ads_image?>" alt="<?php echo $row4->ads_title;?>">
+                                        <img class="img-fluid" src="<?php echo base_url().'<?php echo base_url()?>assets/depan/img/ads/'.$row4->ads_image?>" alt="<?php echo $row4->ads_title;?>">
                                         <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3"><?php echo $row4->ads_category;?></div>
                                     </div>
                                     <div class="p-4">
@@ -149,7 +149,7 @@
                     <!-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="property-item rounded overflow-hidden">
                             <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="assets/depan/img/destination-2.jpg" alt="Keripik Ikan Pegat Bukur">
+                                <img class="img-fluid" src="<?php echo base_url()?>assets/depan/img/destination-2.jpg" alt="Keripik Ikan Pegat Bukur">
                                 <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">Produk</div>
                             </div>
                             <div class="p-4">
@@ -184,7 +184,7 @@
                     <!-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="property-item rounded overflow-hidden">
                             <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="assets/depan/img/destination-4.jpg" alt="Keripik Ikan Pegat Bukur">
+                                <img class="img-fluid" src="<?php echo base_url()?>assets/depan/img/destination-4.jpg" alt="Keripik Ikan Pegat Bukur">
                                 <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">Produk</div>
                             </div>
                             <div class="p-4">
@@ -261,15 +261,15 @@
 
 
 <!-- 2. jQuery Easing -->
-<script src="assets/depan/lib/easing/easing.min.js"></script>
+<script src="<?php echo base_url()?>assets/depan/lib/easing/easing.min.js"></script>
 
 <!-- 3. Plugin dan Library lain -->
-<script src="assets/depan/lib/wow/wow.min.js"></script>
-<script src="assets/depan/lib/waypoints/waypoints.min.js"></script>
-<script src="assets/depan/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="<?php echo base_url()?>assets/depan/lib/wow/wow.min.js"></script>
+<script src="<?php echo base_url()?>assets/depan/lib/waypoints/waypoints.min.js"></script>
+<script src="<?php echo base_url()?>assets/depan/lib/owlcarousel/owl.carousel.min.js"></script>
 
 <!-- 4. Custom JS kamu -->
-<script src="assets/depan/js/main.js"></script>
+<script src="<?php echo base_url()?>assets/depan/js/main.js"></script>
 </body>
 
 </html>
