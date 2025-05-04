@@ -199,6 +199,7 @@
                         </li>
                         <li><a href="<?php echo site_url('backend/inbox');?>" class="waves-effect waves-button"><span class="menu-icon icon-envelope"></span><p>Inbox</p></a></li>
                         <li><a href="<?php echo site_url('backend/comment');?>" class="waves-effect waves-button"><span class="menu-icon icon-bubbles"></span><p>Comments</p></a></li>
+                        <li><a href="<?php echo site_url('backend/ads');?>" class="waves-effect waves-button"><span class="menu-icon icon-drawer"></span><p>Ads</p></a></li>
                         <li><a href="<?php echo site_url('backend/lampiran');?>" class="waves-effect waves-button"><span class="menu-icon icon-link"></span><p>Lampiran</p></a></li>
                         <li><a href="<?php echo site_url('backend/galery');?>" class="waves-effect waves-button"><span class="menu-icon icon-camera"></span><p>Galery</p></a></li>
                         <li class="active"><a href="<?php echo site_url('backend/subscriber');?>" class="waves-effect waves-button"><span class="menu-icon icon-users"></span><p>Subscribers</p></a></li>
