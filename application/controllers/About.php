@@ -21,6 +21,7 @@ class About extends CI_Controller{
 		$data['about_visi'] = $about->about_visi;
 		$data['about_misi'] = $about->about_misi;
 		$data['about_logo'] = $about->about_logo;
+		$data['site_title'] = "Profil Kampung Pegat Bukur";
 		$data['list_staff'] = $this->staff_model->get_all_staff();
 		$v['logo'] =  $site_info->site_logo_header;
 		$z['footer_galery'] = $this->galery_model->get_footer_galery();
