@@ -56,7 +56,7 @@
                         <div>
                             <h1 class="display-5 animated fadeIn mb-4">Tentang Kami</h1>
                             <p class="animated fadeIn">
-                                Kami adalah komunitas desa yang berdedikasi dalam membangun masa depan lebih baik melalui partisipasi aktif dan semangat gotong royong.
+                                Kami adalah komunitas kampung yang berdedikasi dalam membangun masa depan lebih baik melalui partisipasi aktif dan semangat gotong royong.
                             </p>
                         </div>
                     </div>

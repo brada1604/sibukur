@@ -57,7 +57,7 @@
                 <div>
                     <h1 class="display-5 animated fadeIn mb-4">Lampiran</h1>
                     <p class="animated fadeIn">
-                        Halaman ini memuat berbagai dokumen dan data penting terkait Kampung Pegat Bukur, termasuk laporan kegiatan, rencana pembangunan, serta peraturan desa. Informasi ini disediakan demi keterbukaan dan kemudahan akses bagi masyarakat.
+                        Halaman ini memuat berbagai dokumen dan data penting terkait Kampung Pegat Bukur, termasuk laporan kegiatan, rencana pembangunan, serta peraturan kampung. Informasi ini disediakan demi keterbukaan dan kemudahan akses bagi masyarakat.
                     </p>
                 </div>
                 <!-- Breadcrumb -->

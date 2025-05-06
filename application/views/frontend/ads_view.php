@@ -57,7 +57,7 @@
                 <div>
                     <h1 class="display-5 animated fadeIn mb-4">Potensi Unggulan</h1>
                     <p class="animated fadeIn">
-                        Kampung Pegat Bukur memiliki beragam potensi unggulan yang menjadi kebanggaan masyarakat. Dari sektor perikanan, pertanian, hingga pariwisata alam, kampung ini terus berkembang sebagai desa yang mandiri dan produktif.
+                        Kampung Pegat Bukur memiliki beragam potensi unggulan yang menjadi kebanggaan masyarakat. Dari sektor perikanan, pertanian, hingga pariwisata alam, kampung ini terus berkembang sebagai kampung yang mandiri dan produktif.
                     </p>
                 </div>
                 <!-- Breadcrumb -->

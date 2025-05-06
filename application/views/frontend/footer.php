@@ -5,7 +5,7 @@
                 <h5 class="text-white mb-4">Hubungi Kami</h5>
                 <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Kampung Pegat Bukur, Kec. Sambaliung, Kab. Berau, Kalimantan Timur</p>
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62 812-3456-7890</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>pegatbukur@desa.id</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>pegatbukur@kampung.id</p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>

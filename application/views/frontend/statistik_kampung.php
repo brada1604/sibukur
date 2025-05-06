@@ -58,7 +58,7 @@
                         <h1 class="display-5 animated fadeIn mb-4">Statistik Kampung</h1>
                         <p class="animated fadeIn">
                         Halaman ini menyajikan informasi penting yang dapat diakses oleh masyarakat umum, 
-                        mencakup data kependudukan, laporan keuangan desa, rencana pembangunan, dan berbagai kebijakan desa lainnya yang transparan dan akuntabel.
+                        mencakup data kependudukan, laporan keuangan kampung, rencana pembangunan, dan berbagai kebijakan kampung lainnya yang transparan dan akuntabel.
                         </p>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                                 <h5 class="fw-bold text-primary text-uppercase">Penduduk</h5>
                                 <h1 class="mb-0">Jumlah Penduduk & Kepala Keluarga</h1>
                                 <p class="animated fadeIn">
-                                    Kampung Pegat Bukur memiliki jumlah penduduk yang terus bertambah dengan sebaran usia yang beragam. Data kepala keluarga menjadi dasar dalam perencanaan program desa dan pelayanan masyarakat secara merata dan efektif.
+                                    Kampung Pegat Bukur memiliki jumlah penduduk yang terus bertambah dengan sebaran usia yang beragam. Data kepala keluarga menjadi dasar dalam perencanaan program kampung dan pelayanan masyarakat secara merata dan efektif.
                                 </p>
                             </div>
                             <div class="container py-5 pt-lg-0">
@@ -201,7 +201,7 @@
             <div class="col-md-6">
                 <div class="bg-light rounded p-4 shadow-sm">
                     <h5 class="text-center mb-4">Usia Produktif Penduduk</h5>
-                    <p class="text-center text-muted small mb-4">Menunjukkan jumlah penduduk usia produktif (15–64 tahun) yang menjadi tulang punggung kegiatan ekonomi dan pembangunan desa.</p>
+                    <p class="text-center text-muted small mb-4">Menunjukkan jumlah penduduk usia produktif (15–64 tahun) yang menjadi tulang punggung kegiatan ekonomi dan pembangunan kampung.</p>
                     <canvas id="chart-usia" height="300"></canvas>
                 </div>
             </div>

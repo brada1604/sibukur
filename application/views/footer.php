@@ -7,7 +7,7 @@
                     <h5 class="text-white mb-4">Hubungi Kami</h5>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Kampung Pegat Bukur, Kec. Sambaliung, Kab. Berau, Kalimantan Timur</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62 812-3456-7890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>pegatbukur@desa.id</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>pegatbukur@kampung.id</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4">Berlangganan Info</h5>
-                    <p>Dapatkan info terbaru seputar desa Pegat Bukur langsung ke email Anda.</p>
+                    <p>Dapatkan info terbaru seputar kampung Pegat Bukur langsung ke email Anda.</p>
                     <div class="position-relative" style="max-width: 400px;">
                         <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="email" placeholder="Email Anda">
                         <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Daftar</button>

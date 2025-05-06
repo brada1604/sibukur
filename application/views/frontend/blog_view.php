@@ -81,7 +81,7 @@
                     <div>
                         <h1 class="display-5 animated fadeIn mb-3">Berita Kampung</h1>
                         <p class="animated fadeIn text-muted">
-                            Temukan kabar terbaru seputar kegiatan, pengumuman, serta informasi penting lainnya dari Kampung Pegat Bukur. Bersama kita wujudkan desa yang maju, transparan, dan terhubung.
+                            Temukan kabar terbaru seputar kegiatan, pengumuman, serta informasi penting lainnya dari Kampung Pegat Bukur. Bersama kita wujudkan kampung yang maju, transparan, dan terhubung.
                         </p>
                     </div>
                
@@ -168,7 +168,7 @@
                                         <small><i class="far fa-calendar-alt text-primary me-2"></i>18 April, 2025</small>
                                     </div>
                                     <h4 class="mb-3">Mendukung Ekonomi Lokal: Produk dari Pegat Bukur</h4>
-                                    <p>Jelajahi barang-barang kerajinan tangan unik dan produk lokal dari Pegat Bukur. Barang-barang ini adalah bukti keterampilan dan kreativitas warga desa kami.</p>
+                                    <p>Jelajahi barang-barang kerajinan tangan unik dan produk lokal dari Pegat Bukur. Barang-barang ini adalah bukti keterampilan dan kreativitas warga kampung kami.</p>
                                     <a class="text-uppercase" href="blog-detail.html">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -186,7 +186,7 @@
                                         <small><i class="far fa-calendar-alt text-primary me-2"></i>15 April, 2025</small>
                                     </div>
                                     <h4 class="mb-3">Merayakan Festival Lokal di Pegat Bukur</h4>
-                                    <p>Bergabunglah dengan kami dalam acara budaya tahunan yang menampilkan tradisi kaya desa kami. Dari pertunjukan tari hingga festival kuliner, ada sesuatu untuk semua orang!</p>
+                                    <p>Bergabunglah dengan kami dalam acara budaya tahunan yang menampilkan tradisi kaya kampung kami. Dari pertunjukan tari hingga festival kuliner, ada sesuatu untuk semua orang!</p>
                                     <a class="text-uppercase" href="blog-detail.html">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>

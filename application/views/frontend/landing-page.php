@@ -318,7 +318,7 @@
         <div class="col-lg-6">
             <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
                 <h1 class="mb-3">Administrasi Data Penduduk</h1>
-                <p>Data statistik jumlah penduduk Kampung Pegat Bukur yang tercatat dalam sistem administrasi kependudukan desa, diperbarui secara berkala.</p>
+                <p>Data statistik jumlah penduduk Kampung Pegat Bukur yang tercatat dalam sistem administrasi kependudukan kampung, diperbarui secara berkala.</p>
             </div>
         </div>
         <div class="row gx-0">
