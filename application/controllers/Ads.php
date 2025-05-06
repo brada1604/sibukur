@@ -32,6 +32,8 @@ class Ads extends CI_Controller{
 	}
 
 	function detail($id){
+		$x['site_title'] = "Detail Unggulan - Kampung Pegat Bukur";
+
 		$data=$this->ads_model->get_ads_by_id($id);
 		if($data->num_rows() > 0){
 			// $x['data_last_post']=$this->blog_model->get_last_post();
