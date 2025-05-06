@@ -96,7 +96,7 @@ class Category extends CI_Controller{
 			$x['data_last_post']=$this->blog_model->get_last_post();
 			$x['data_all_categories_by_name']=$this->category_model->get_all_categories_by_name();
 			$x['data_all_tags_by_name']=$this->tag_model->get_all_tags_by_name();
-			$x['judul']= $kategori_nama;
+			$x['site_title']= "Post Kategori ".$kategori_nama." - Kampung Pegat Bukur";
 			$x['description']= "Kumpulan artikel ".$kategori_nama." yang bermanfaat untuk menambah wawasan Anda.";
 			if(empty($this->uri->segment(3))){
 				$next_page=2;
@@ -123,8 +123,9 @@ class Category extends CI_Controller{
 			$v['logo'] =  $site_info->site_logo_header;
 			$x['icon'] = $site_info->site_favicon;
 			$x['site_image'] = $site_info->site_logo_big;
+			$z['footer_galery'] = $this->galery_model->get_footer_galery();
 			$x['header'] = $this->load->view('frontend/header',$v,TRUE);
-			$x['footer'] = $this->load->view('frontend/footer','',TRUE);
+			$x['footer'] = $this->load->view('frontend/footer',$z,TRUE);
 			$site = $this->site_model->get_site_data()->row_array();
 			$x['site_name'] = $site['site_name'];
 			$x['site_twitter'] = $site['site_twitter'];
