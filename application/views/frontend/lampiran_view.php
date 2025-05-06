@@ -57,7 +57,7 @@
                 <div>
                     <h1 class="display-5 animated fadeIn mb-4">Lampiran</h1>
                     <p class="animated fadeIn">
-                        Halaman ini memuat berbagai dokumen dan data penting terkait Desa Pegat Bukur, termasuk laporan kegiatan, rencana pembangunan, serta peraturan desa. Informasi ini disediakan demi keterbukaan dan kemudahan akses bagi masyarakat.
+                        Halaman ini memuat berbagai dokumen dan data penting terkait Kampung Pegat Bukur, termasuk laporan kegiatan, rencana pembangunan, serta peraturan desa. Informasi ini disediakan demi keterbukaan dan kemudahan akses bagi masyarakat.
                     </p>
                 </div>
                 <!-- Breadcrumb -->
@@ -73,7 +73,7 @@
             <!-- Gambar Ilustrasi -->
             <div class="col-lg-8">
                 <div class="h-100 w-100">
-                    <img src="<?php echo base_url()?>assets/depan/img/about.png" alt="Dokumentasi Lampiran Desa"
+                    <img src="<?php echo base_url()?>assets/depan/img/about.png" alt="Dokumentasi Lampiran Kampung"
                          class="img-fluid rounded shadow"
                          style="height: 100%; width: 100%; object-fit: cover;">
                 </div>
@@ -128,7 +128,7 @@
                             <div class="col-sm-12 col-md-8 d-flex align-items-center">
                                 <img class="flex-shrink-0 img-fluid border rounded bg-light" src="<?php echo base_url()?>assets/depan/img/excel.png" alt="Dokumen PDF" style="width: 80px; height: 80px;">
                                 <div class="text-start ps-4">
-                                    <h5 class="mb-2">Peraturan Desa Tentang Pengelolaan Sampah</h5>
+                                    <h5 class="mb-2">Peraturan Kampung Tentang Pengelolaan Sampah</h5>
                                     <p class="mb-0"><i class="far fa-calendar-alt text-primary me-2"></i>Dipublikasikan: 20 Oktober 2023</p>
                                 </div>
                             </div>

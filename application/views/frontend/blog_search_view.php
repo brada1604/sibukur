@@ -108,7 +108,7 @@
                     <div>
                         <h1 class="display-5 animated fadeIn mb-3">Berita Kampung</h1>
                         <p class="animated fadeIn text-muted">
-                            Temukan kabar terbaru seputar kegiatan, pengumuman, serta informasi penting lainnya dari Desa Pegat Bukur. Bersama kita wujudkan desa yang maju, transparan, dan terhubung.
+                            Temukan kabar terbaru seputar kegiatan, pengumuman, serta informasi penting lainnya dari Kampung Pegat Bukur. Bersama kita wujudkan desa yang maju, transparan, dan terhubung.
                         </p>
                     </div>
                     <nav aria-label="breadcrumb animated fadeIn">
@@ -246,7 +246,7 @@
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-white mb-4">Hubungi Kami</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Desa Pegat Bukur, Kec. Sambaliung, Kab. Berau, Kalimantan Timur</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Kampung Pegat Bukur, Kec. Sambaliung, Kab. Berau, Kalimantan Timur</p>
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62 812-3456-7890</p>
                 <p class="mb-2"><i class="fa fa-envelope me-3"></i>pegatbukur@desa.id</p>
                 <div class="d-flex pt-2">
@@ -257,14 +257,14 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-white mb-4">Tautan Cepat</h5>
-                <a class="btn btn-link text-white-50" href="#">Profil Desa</a>
+                <a class="btn btn-link text-white-50" href="#">Profil Kampung</a>
                 <a class="btn btn-link text-white-50" href="#">Berita & Kegiatan</a>
                 <a class="btn btn-link text-white-50" href="#">Statistik Penduduk</a>
                 <a class="btn btn-link text-white-50" href="#">Produk UMKM</a>
                 <a class="btn btn-link text-white-50" href="#">Galeri</a>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Galeri Desa</h5>
+                <h5 class="text-white mb-4">Galeri Kampung</h5>
                 <div class="row g-2 pt-2">
                     <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" alt=""></div>
                     <div class="col-4"><img class="img-fluid rounded bg-light p-1" src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" alt=""></div>
@@ -288,7 +288,7 @@
 
         <div class="row">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                &copy; <a class="text-white" href="#">Desa Pegat Bukur</a> | All Rights Reserved.
+                &copy; <a class="text-white" href="#">Kampung Pegat Bukur</a> | All Rights Reserved.
             </div>
             <div class="col-md-6 text-center text-md-end">
                 <div class="footer-menu">

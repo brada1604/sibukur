@@ -56,7 +56,7 @@
                 <div>
                     <h1 class="display-5 animated fadeIn mb-3">Galeri Kampung</h1>
                     <p class="animated fadeIn text-muted">
-                        Temukan kabar terbaru seputar kegiatan, pengumuman, serta informasi penting lainnya dari Desa Pegat Bukur. Bersama kita wujudkan desa yang maju, transparan, dan terhubung.
+                        Temukan kabar terbaru seputar kegiatan, pengumuman, serta informasi penting lainnya dari Kampung Pegat Bukur. Bersama kita wujudkan desa yang maju, transparan, dan terhubung.
                     </p>
                 </div>
                 <nav aria-label="breadcrumb animated fadeIn">

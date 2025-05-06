@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Kampung Pegat Bukur</title>
+    <title><?= $site_title;?></title>
     
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
@@ -57,14 +57,13 @@
                 <div>
                     <h1 class="display-5 animated fadeIn mb-4">Potensi Unggulan</h1>
                     <p class="animated fadeIn">
-                        Desa Pegat Bukur memiliki beragam potensi unggulan yang menjadi kebanggaan masyarakat. Dari sektor perikanan, pertanian, hingga pariwisata alam, kampung ini terus berkembang sebagai desa yang mandiri dan produktif.
+                        Kampung Pegat Bukur memiliki beragam potensi unggulan yang menjadi kebanggaan masyarakat. Dari sektor perikanan, pertanian, hingga pariwisata alam, kampung ini terus berkembang sebagai desa yang mandiri dan produktif.
                     </p>
                 </div>
                 <!-- Breadcrumb -->
                 <nav aria-label="breadcrumb animated fadeIn">
                     <ol class="breadcrumb text-uppercase">
                         <li class="breadcrumb-item"><a href="#">Beranda</a></li>
-                        <li class="breadcrumb-item"><a href="#">Profil</a></li>
                         <li class="breadcrumb-item text-body active" aria-current="page">Potensi Unggulan</li>
                     </ol>
                 </nav>
@@ -73,7 +72,7 @@
             <!-- Gambar -->
             <div class="col-lg-8">
                 <div class="h-100 w-100">
-                    <img src="<?php echo base_url()?>assets/depan/img/about.png" alt="Potensi Unggulan Desa Pegat Bukur" 
+                    <img src="<?php echo base_url()?>assets/depan/img/about.png" alt="Potensi Unggulan Kampung Pegat Bukur" 
                          class="img-fluid rounded shadow" 
                          style="height: 100%; width: 100%; object-fit: cover;">
                 </div>

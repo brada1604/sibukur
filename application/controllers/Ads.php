@@ -13,7 +13,7 @@ class Ads extends CI_Controller{
 	}
 
 	function index(){
-		$data['site_title'] = "Ads";
+		$data['site_title'] = "Unggulan - Kampung Pegat Bukur";
 
 		$site_info = $this->db->get('tbl_site', 1)->row();
 		$v['logo'] =  $site_info->site_logo_header;

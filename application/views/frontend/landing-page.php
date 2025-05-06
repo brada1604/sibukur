@@ -172,7 +172,7 @@
                     <div class="row g-5 align-items-center">
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="about-img position-relative overflow-hidden p-3 pe-0">
-                                <!-- <img class="img-fluid w-100" src="<?php echo base_url()?>assets/depan/img/Kepala Desa.png"> -->
+                                <!-- <img class="img-fluid w-100" src="<?php echo base_url()?>assets/depan/img/Kepala Kampung.png"> -->
                                 <img class="img-fluid w-100" src="<?php echo base_url().'theme/images/'.$about_img; ?>">
                             </div>
                         </div>
@@ -318,7 +318,7 @@
         <div class="col-lg-6">
             <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
                 <h1 class="mb-3">Administrasi Data Penduduk</h1>
-                <p>Data statistik jumlah penduduk Desa Pegat Bukur yang tercatat dalam sistem administrasi kependudukan desa, diperbarui secara berkala.</p>
+                <p>Data statistik jumlah penduduk Kampung Pegat Bukur yang tercatat dalam sistem administrasi kependudukan desa, diperbarui secara berkala.</p>
             </div>
         </div>
         <div class="row gx-0">
@@ -399,7 +399,7 @@
             <div class="col-lg-6">
                 <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
                     <h1 class="mb-3">Potensi & Unggulan Kampung</h1>
-                    <p>Berbagai produk dan destinasi wisata lokal unggulan hasil karya dan kekayaan alam Desa Pegat Bukur.</p>
+                    <p>Berbagai produk dan destinasi wisata lokal unggulan hasil karya dan kekayaan alam Kampung Pegat Bukur.</p>
                 </div>
             </div>
             <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">

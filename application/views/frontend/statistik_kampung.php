@@ -91,7 +91,7 @@
                                 <h5 class="fw-bold text-primary text-uppercase">Penduduk</h5>
                                 <h1 class="mb-0">Jumlah Penduduk & Kepala Keluarga</h1>
                                 <p class="animated fadeIn">
-                                    Desa Pegat Bukur memiliki jumlah penduduk yang terus bertambah dengan sebaran usia yang beragam. Data kepala keluarga menjadi dasar dalam perencanaan program desa dan pelayanan masyarakat secara merata dan efektif.
+                                    Kampung Pegat Bukur memiliki jumlah penduduk yang terus bertambah dengan sebaran usia yang beragam. Data kepala keluarga menjadi dasar dalam perencanaan program desa dan pelayanan masyarakat secara merata dan efektif.
                                 </p>
                             </div>
                             <div class="container py-5 pt-lg-0">
@@ -179,7 +179,7 @@
                 <div class="position-relative pb-3">
                     <h5 class="fw-bold text-primary text-uppercase">Penduduk</h5>
                     <h1 class="mb-3">Jumlah Penduduk Menurut RT</h1>
-                    <p>Data berikut menampilkan distribusi jumlah penduduk Desa Pegat Bukur berdasarkan Rukun Tetangga (RT). Statistik ini digunakan sebagai dasar pengambilan keputusan dalam program pembangunan dan pelayanan masyarakat.</p>
+                    <p>Data berikut menampilkan distribusi jumlah penduduk Kampung Pegat Bukur berdasarkan Rukun Tetangga (RT). Statistik ini digunakan sebagai dasar pengambilan keputusan dalam program pembangunan dan pelayanan masyarakat.</p>
                 </div>
             </div>
             <div class="col-lg-8 d-flex align-items-center">
@@ -195,7 +195,7 @@
             <div class="col-12 text-center">
                 <h5 class="fw-bold text-primary text-uppercase">Penduduk</h5>
                 <h1 class="mb-3">Data Sosial, Ekonomi & Pendidikan</h1>
-                <p>Berikut adalah data yang menggambarkan kondisi sosial, ekonomi, usia produktif, serta tingkat pendidikan masyarakat di Desa Pegat Bukur.</p>
+                <p>Berikut adalah data yang menggambarkan kondisi sosial, ekonomi, usia produktif, serta tingkat pendidikan masyarakat di Kampung Pegat Bukur.</p>
             </div>
 
             <div class="col-md-6">
@@ -208,7 +208,7 @@
             <div class="col-md-6">
                 <div class="bg-light rounded p-4 shadow-sm">
                     <h5 class="text-center mb-4">Kondisi Ekonomi</h5>
-                    <p class="text-center text-muted small mb-4">Menggambarkan kategori tingkat penghasilan atau kondisi ekonomi rumah tangga di Desa Pegat Bukur.</p>
+                    <p class="text-center text-muted small mb-4">Menggambarkan kategori tingkat penghasilan atau kondisi ekonomi rumah tangga di Kampung Pegat Bukur.</p>
                     <canvas id="chart-ekonomi" height="300"></canvas>
                 </div>
             </div>

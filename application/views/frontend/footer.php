@@ -14,7 +14,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-white mb-4">Tautan Cepat</h5>
-                <a class="btn btn-link text-white-50" href="<?php echo base_url()?>about">Profil Desa</a>
+                <a class="btn btn-link text-white-50" href="<?php echo base_url()?>about">Profil Kampung</a>
                 <a class="btn btn-link text-white-50" href="<?php echo base_url()?>blog">Berita & Kegiatan</a>
                 <a class="btn btn-link text-white-50" href="<?php echo base_url()?>data-kampung">Statistik Penduduk</a>
                 <a class="btn btn-link text-white-50" href="<?php echo base_url()?>ads">Produk UMKM</a>
