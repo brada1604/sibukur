@@ -13,15 +13,21 @@ class Ads extends CI_Controller{
 	}
 
 	function index(){
-		$site_info = $this->db->get('tbl_site', 1)->row();
-		$about = $this->db->get('tbl_about', 1)->row();
-		$data['list_ads'] = $this->ads_model->get_all_ads_by_date();
-		$v['logo'] =  $site_info->site_logo_header;
-		$z['footer_galery'] = $this->galery_model->get_footer_galery();
-		$data['icon'] = $site_info->site_favicon;
 		$data['site_title'] = "Ads";
+
+		$site_info = $this->db->get('tbl_site', 1)->row();
+		$v['logo'] =  $site_info->site_logo_header;
+		$data['icon'] = $site_info->site_favicon;
+
+		$about = $this->db->get('tbl_about', 1)->row();
+		
+		$data['list_ads'] = $this->ads_model->get_all_ads_by_date();
+		
+		$z['footer_galery'] = $this->galery_model->get_footer_galery();
+		
 		$data['header'] = $this->load->view('frontend/header',$v,TRUE);
 		$data['footer'] = $this->load->view('frontend/footer',$z,TRUE);
+
 		$this->load->view('frontend/ads_view',$data);
 	}
 
@@ -67,12 +73,17 @@ class Ads extends CI_Controller{
     		$site_info = $this->db->get('tbl_site', 1)->row();
 			$v['logo'] =  $site_info->site_logo_header;
 			$x['icon'] = $site_info->site_favicon;
-			$x['header'] = $this->load->view('frontend/header',$v,TRUE);
-			$x['footer'] = $this->load->view('frontend/footer','',TRUE);
+			// $x['header'] = $this->load->view('frontend/header',$v,TRUE);
+			// $x['footer'] = $this->load->view('frontend/footer','',TRUE);
     		$site = $this->site_model->get_site_data()->row_array();
 			$x['site_name'] = $site['site_name'];
 			$x['site_twitter'] = $site['site_twitter'];
 			$x['site_facebook'] = $site['site_facebook'];
+
+			$z['footer_galery'] = $this->galery_model->get_footer_galery();
+
+			$x['header'] = $this->load->view('frontend/header',$v,TRUE);
+			$x['footer'] = $this->load->view('frontend/footer',$z,TRUE);
     		$this->load->view('frontend/ads_detail_view',$x);
 		}else{
 		    redirect('unggulan-kampung');
