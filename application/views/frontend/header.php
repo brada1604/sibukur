@@ -1,13 +1,14 @@
-
 <div class="container-fluid nav-bar bg-transparent">
     <nav class="main-nav navbar navbar-expand-lg bg-white navbar-light py-0">
         <div class="container px-4">
             <a href="<?php echo site_url();?>" class="logo navbar-brand">
                 <img src="<?php echo base_url().'theme/images/'.$logo;?>" alt="logo kampung pegat bukur" style="height: 100%;">
             </a>
+            
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="clearlist navbar-nav ms-auto">
                     <?php 
