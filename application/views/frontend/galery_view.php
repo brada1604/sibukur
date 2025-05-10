@@ -36,107 +36,72 @@
 
 <body>
     <div class="container-fluid bg-white px-0">
-<!-- Spinner Start -->
+        <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-<!-- Spinner End -->
+        <!-- Spinner End -->
 
-<!-- Navbar Start -->
-    <?php echo $header;?>
-<!-- Navbar End -->
-<!-- Header Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-5 align-items-stretch">
-            <!-- Informasi dan Navigasi -->
-            <div class="col-lg-4 d-flex flex-column justify-content-between">
-                <div>
-                    <h1 class="display-5 animated fadeIn mb-3">Galeri Kampung</h1>
-                    <p class="animated fadeIn text-muted">
-                        Temukan kabar terbaru seputar kegiatan, pengumuman, serta informasi penting lainnya dari Kampung Pegat Bukur. Bersama kita wujudkan kampung yang maju, transparan, dan terhubung.
-                    </p>
-                </div>
-                <nav aria-label="breadcrumb animated fadeIn">
-                    <ol class="breadcrumb text-uppercase small mb-0">
-                        <li class="breadcrumb-item"><a href="#">Beranda</a></li>
-                        <li class="breadcrumb-item text-body active" aria-current="page">Galeri Kampung</li>
-                    </ol>
-                </nav>
-            </div>
+        <!-- Navbar Start -->
+            <?php echo $header;?>
+        <!-- Navbar End -->
 
-            <!-- Gambar Ilustrasi -->
-            <div class="col-lg-8">
-                <div class="h-100 w-100">
-                    <img src="<?php echo base_url()?>assets/depan/img/about.png" alt="Berita Kampung" 
-                         class="img-fluid rounded shadow" 
-                         style="height: 100%; width: 100%; object-fit: cover;">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Header End -->
-<!-- Galeri Start -->
-<div class="container gallery py-5">
+        <!-- Header Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5 align-items-stretch">
+                    <!-- Informasi dan Navigasi -->
+                    <div class="col-lg-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <h1 class="display-5 animated fadeIn mb-3">Galeri Kampung</h1>
+                            <p class="animated fadeIn text-muted">
+                                Temukan kabar terbaru seputar kegiatan, pengumuman, serta informasi penting lainnya dari Kampung Pegat Bukur. Bersama kita wujudkan kampung yang maju, transparan, dan terhubung.
+                            </p>
+                        </div>
+                        <nav aria-label="breadcrumb animated fadeIn">
+                            <ol class="breadcrumb text-uppercase small mb-0">
+                                <li class="breadcrumb-item"><a href="#">Beranda</a></li>
+                                <li class="breadcrumb-item text-body active" aria-current="page">Galeri Kampung</li>
+                            </ol>
+                        </nav>
+                    </div>
 
-    <div class="row g-3 justify-content-center">
-        <?php foreach($list_galery->result() as $row):?>
-        <div class="col-6 col-sm-4 col-md-3">
-            <div class="gallery-item position-relative">
-                <img src="<?php echo base_url().'assets/depan/img/galery/'.$row->galery_image?>" class="img-fluid w-100 rounded" alt="galeri">
-                <div class="gallery-plus-icon position-absolute top-50 start-50 translate-middle">
-                    <a href="<?php echo base_url().'assets/depan/img/galery/'.$row->galery_image?>" data-lightbox="galeri" class="text-white">
-                        <i class="fas fa-plus fa-2x"></i>
-                    </a>
+                    <!-- Gambar Ilustrasi -->
+                    <div class="col-lg-8">
+                        <div class="h-100 w-100">
+                            <img src="<?php echo base_url()?>assets/depan/img/about.png" alt="Berita Kampung" class="img-fluid rounded shadow" style="height: 100%; width: 100%; object-fit: cover;">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <?php endforeach;?>
+        <!-- Header End -->
 
-        <!-- <div class="col-6 col-sm-4 col-md-3">
-            <div class="gallery-item position-relative">
-                <img src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" class="img-fluid w-100 rounded" alt="galeri">
-                <div class="gallery-plus-icon position-absolute top-50 start-50 translate-middle">
-                    <a href="<?php echo base_url()?>assets/depan/img/destination-1.jpg" data-lightbox="galeri" class="text-white">
-                        <i class="fas fa-plus fa-2x"></i>
-                    </a>
-                </div>
+        <!-- Galeri Start -->
+        <div class="container gallery py-5">
+
+            <div class="row g-3 justify-content-center">
+                <?php foreach($list_galery->result() as $row):?>
+                    <div class="col-6 col-sm-4 col-md-3">
+                        <div class="gallery-item position-relative">
+                            <img src="<?php echo base_url().'assets/depan/img/galery/'.$row->galery_image?>" class="img-fluid w-100 rounded" alt="galeri">
+                            <div class="gallery-plus-icon position-absolute top-50 start-50 translate-middle">
+                                <a href="<?php echo base_url().'assets/depan/img/galery/'.$row->galery_image?>" data-lightbox="galeri" class="text-white">
+                                    <i class="fas fa-plus fa-2x"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach;?>
             </div>
         </div>
-        <div class="col-6 col-sm-4 col-md-3">
-            <div class="gallery-item position-relative">
-                <img src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" class="img-fluid w-100 rounded" alt="galeri">
-                <div class="gallery-plus-icon position-absolute top-50 start-50 translate-middle">
-                    <a href="<?php echo base_url()?>assets/depan/img/destination-1.jpg" data-lightbox="galeri" class="text-white">
-                        <i class="fas fa-plus fa-2x"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3">
-            <div class="gallery-item position-relative">
-                <img src="<?php echo base_url()?>assets/depan/img/destination-1.jpg" class="img-fluid w-100 rounded" alt="galeri">
-                <div class="gallery-plus-icon position-absolute top-50 start-50 translate-middle">
-                    <a href="<?php echo base_url()?>assets/depan/img/destination-1.jpg" data-lightbox="galeri" class="text-white">
-                        <i class="fas fa-plus fa-2x"></i>
-                    </a>
-                </div>
-            </div>
-        </div> -->
-        
-        <!-- Tambah item sesuai kebutuhan -->
-    </div>
-</div>
-<!-- Galeri End -->
+        <!-- Galeri End -->
 
-    
-
-<!-- footer start  -->
-<?php echo $footer;?>
-<!-- footer end -->
+        <!-- footer start  -->
+        <?php echo $footer;?>
+        <!-- footer end -->
 
     </div>
 
