@@ -35,136 +35,89 @@
 
 <body>
     <div class="container-fluid bg-white px-0">
-<!-- Spinner Start -->
+        <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-<!-- Spinner End -->
+        <!-- Spinner End -->
 
-<!-- Navbar Start -->
-    <?php echo $header;?>
-<!-- Navbar End -->
+        <!-- Navbar Start -->
+            <?php echo $header;?>
+        <!-- Navbar End -->
 
       
         <!-- Header Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-5 align-items-stretch">
-            <!-- Bagian Teks -->
-            <div class="col-lg-4 d-flex flex-column justify-content-between">
-                <div>
-                    <h1 class="display-5 animated fadeIn mb-4">Lampiran</h1>
-                    <p class="animated fadeIn">
-                        Halaman ini memuat berbagai dokumen dan data penting terkait Kampung Pegat Bukur, termasuk laporan kegiatan, rencana pembangunan, serta peraturan kampung. Informasi ini disediakan demi keterbukaan dan kemudahan akses bagi masyarakat.
-                    </p>
-                </div>
-                <!-- Breadcrumb -->
-                <nav aria-label="breadcrumb animated fadeIn">
-                    <ol class="breadcrumb text-uppercase mb-0">
-                        <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
-                        <li class="breadcrumb-item"><a href="profil.html">Profil</a></li>
-                        <li class="breadcrumb-item text-body active" aria-current="page">Lampiran</li>
-                    </ol>
-                </nav>
-            </div>
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5 align-items-stretch">
+                    <!-- Bagian Teks -->
+                    <div class="col-lg-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <h1 class="display-5 animated fadeIn mb-4">Lampiran</h1>
+                            <p class="animated fadeIn">
+                                Halaman ini memuat berbagai dokumen dan data penting terkait Kampung Pegat Bukur, termasuk laporan kegiatan, rencana pembangunan, serta peraturan kampung. Informasi ini disediakan demi keterbukaan dan kemudahan akses bagi masyarakat.
+                            </p>
+                        </div>
+                        <!-- Breadcrumb -->
+                        <nav aria-label="breadcrumb animated fadeIn">
+                            <ol class="breadcrumb text-uppercase mb-0">
+                                <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+                                <li class="breadcrumb-item"><a href="profil.html">Profil</a></li>
+                                <li class="breadcrumb-item text-body active" aria-current="page">Lampiran</li>
+                            </ol>
+                        </nav>
+                    </div>
 
-            <!-- Gambar Ilustrasi -->
-            <div class="col-lg-8">
-                <div class="h-100 w-100">
-                    <img src="<?php echo base_url()?>assets/depan/img/about.png" alt="Dokumentasi Lampiran Kampung"
-                         class="img-fluid rounded shadow"
-                         style="height: 100%; width: 100%; object-fit: cover;">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Header End -->
-
-<!-- Lampiran Data Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
-            <div class="tab-content">
-                <div id="tab-1" class="tab-pane fade show p-0 active">
-
-                    <!-- Item Lampiran -->
-                    <?php foreach($list_lampiran->result() as $row):?>
-                    <div class="job-item p-4 mb-4 border rounded shadow-sm">
-                        <div class="row g-4">
-                            <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                <img class="flex-shrink-0 img-fluid border rounded bg-light" src="<?php echo base_url().'assets/depan/img/lampiran/'.$row->lampiran_image?>" alt="Dokumen" style="width: 80px; height: 80px;">
-                                <div class="text-start ps-4">
-                                    <h5 class="mb-2"><?php echo $row->lampiran_title;?></h5>
-                                    <p class="mb-0"><i class="far fa-calendar-alt text-primary me-2"></i>Dipublikasikan : <?php echo date('d M Y',strtotime($row->lampiran_date));?></p>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                <a class="btn btn-primary" href="<?php echo $row->lampiran_url;?>" target="_blank"><i class="fas fa-download me-2"></i>Unduh</a>
-                            </div>
+                    <!-- Gambar Ilustrasi -->
+                    <div class="col-lg-8">
+                        <div class="h-100 w-100">
+                            <img src="<?php echo base_url()?>assets/depan/img/about.png" alt="Dokumentasi Lampiran Kampung" class="img-fluid rounded shadow" style="height: 100%; width: 100%; object-fit: cover;">
                         </div>
                     </div>
-                    <?php endforeach;?>
-
-                    <!-- <div class="job-item p-4 mb-4 border rounded shadow-sm">
-                        <div class="row g-4">
-                            <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                <img class="flex-shrink-0 img-fluid border rounded bg-light" src="<?php echo base_url()?>assets/depan/img/word.png" alt="Dokumen PDF" style="width: 80px; height: 80px;">
-                                <div class="text-start ps-4">
-                                    <h5 class="mb-2">Laporan Realisasi APBDes Tahun 2023</h5>
-                                    <p class="mb-0"><i class="far fa-calendar-alt text-primary me-2"></i>Dipublikasikan: 5 Januari 2024</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                <a class="btn btn-primary" href="dokumen/apbdes-2023.pdf" target="_blank"><i class="fas fa-download me-2"></i>Unduh</a>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- <div class="job-item p-4 mb-4 border rounded shadow-sm">
-                        <div class="row g-4">
-                            <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                <img class="flex-shrink-0 img-fluid border rounded bg-light" src="<?php echo base_url()?>assets/depan/img/excel.png" alt="Dokumen PDF" style="width: 80px; height: 80px;">
-                                <div class="text-start ps-4">
-                                    <h5 class="mb-2">Peraturan Kampung Tentang Pengelolaan Sampah</h5>
-                                    <p class="mb-0"><i class="far fa-calendar-alt text-primary me-2"></i>Dipublikasikan: 20 Oktober 2023</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                <a class="btn btn-primary" href="dokumen/perdes-sampah.pdf" target="_blank"><i class="fas fa-download me-2"></i>Unduh</a>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- <div class="job-item p-4 mb-4 border rounded shadow-sm">
-                        <div class="row g-4">
-                            <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                <img class="flex-shrink-0 img-fluid border rounded bg-light" src="<?php echo base_url()?>assets/depan/img/pdf.png" alt="Dokumen PDF" style="width: 80px; height: 80px;">
-                                <div class="text-start ps-4">
-                                    <h5 class="mb-2">Data Statistik Kependudukan Tahun 2024</h5>
-                                    <p class="mb-0"><i class="far fa-calendar-alt text-primary me-2"></i>Dipublikasikan: 1 Maret 2024</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                <a class="btn btn-primary" href="dokumen/statistik-kependudukan-2024.pdf" target="_blank"><i class="fas fa-download me-2"></i>Unduh</a>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- <a class="btn btn-outline-primary py-3 px-5" href="semua-lampiran.html">Lihat Semua Lampiran</a> -->
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- Lampiran Data End -->
+        <!-- Header End -->
+
+        <!-- Lampiran Data Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="tab-content">
+                        <div id="tab-1" class="tab-pane fade show p-0 active">
+
+                            <!-- Item Lampiran -->
+                            <?php foreach($list_lampiran->result() as $row):?>
+                                <div class="job-item p-4 mb-4 border rounded shadow-sm">
+                                    <div class="row g-4">
+                                        <div class="col-sm-12 col-md-8 d-flex align-items-center">
+                                            <img class="flex-shrink-0 img-fluid border rounded bg-light" src="<?php echo base_url().'assets/depan/img/lampiran/'.$row->lampiran_image?>" alt="Dokumen" style="width: 80px; height: 80px;">
+                                            <div class="text-start ps-4">
+                                                <h5 class="mb-2"><?php echo $row->lampiran_title;?></h5>
+                                                <p class="mb-0"><i class="far fa-calendar-alt text-primary me-2"></i>Dipublikasikan : <?php echo date('d M Y',strtotime($row->lampiran_date));?></p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                                            <a class="btn btn-primary" href="<?php echo $row->lampiran_url;?>" target="_blank"><i class="fas fa-download me-2"></i>Unduh</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach;?>
+
+                            <!-- <a class="btn btn-outline-primary py-3 px-5" href="semua-lampiran.html">Lihat Semua Lampiran</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Lampiran Data End -->
     
 
-<!-- footer start  -->
-      <?php echo $footer;?>
-<!-- footer end -->
+        <!-- footer start  -->
+        <?php echo $footer;?>
+        <!-- footer end -->
 
     </div>
 
