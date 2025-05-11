@@ -25,38 +25,29 @@
     });
 
     // Header Carousel
-    
     $(document).ready(function () {
-    const firstIndex = $(".header-carousel .owl-carousel-item").first().data("text-index");
-    $(".header-text").removeClass("active").addClass("d-none");
-    $(".header-text[data-text-index='" + firstIndex + "']").addClass("active").removeClass("d-none");
-    });
-  
-    $(".header-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        items: 1,
-        loop: true,
-        dots: false,
-        nav: false,
-        animateOut: 'fadeOut',   
-        animateIn: 'fadeIn',         
-        onChanged: function (event) {
-          const index = $(event.target)
-            .find(".owl-item.active .owl-carousel-item")
-            .data("text-index");
-          $(".header-text").removeClass("active").addClass("d-none");
-          $(".header-text[data-text-index='" + index + "']").addClass("active").removeClass("d-none");
-        }
-      });
-      
+        var owl = $(".unified-carousel").owlCarousel({
+            autoplay: true,
+            smartSpeed: 800,
+            items: 1,
+            loop: true,
+            dots: false,
+            nav: false,
+
+        });
     
-      $("#nextSlide").on("click", function () {
-        $(".header-carousel").trigger("next.owl.carousel");
-      });
-      $("#prevSlide").on("click", function () {
-        $(".header-carousel").trigger("prev.owl.carousel");
-      });
+        $("#nextUnified").click(function () {
+            owl.trigger("next.owl.carousel");
+        });
+    
+        $("#prevUnified").click(function () {
+            owl.trigger("prev.owl.carousel");
+        });
+    });
+    
+    
+    
+    
       
       
     // Testimonials Carousel

@@ -169,61 +169,32 @@
 
 
 /*** Header ***/
-/* Tombol panah di dalam card */
-.custom-nav {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-  }
-  
-  .custom-nav button {
+/* Jarak antar elemen */
+.slide-item {
+    padding: 20px 10px;
+}
+
+.slide-item .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Tombol panah */
+button.rounded-circle {
     width: 40px;
     height: 40px;
     font-size: 18px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-  }
-  .owl-carousel .owl-nav {
-    display: none !important;
-  }
-.header-carousel .owl-nav {
-    position: absolute;
-    top: 50%;
-    left: -60px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .header-carousel .owl-nav button.owl-prev,
-  .header-carousel .owl-nav button.owl-next {
-    background-color: #198754; /* Bootstrap's 'success' green */
-    color: #fff;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: none;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-  }
-  
-  .header-carousel .owl-nav button:hover {
-    background-color: #146c43;
-  }
-  
-  .parallax-header {
-    background-image: url('../img/bgparalax.png');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
 }
+
+/* Nonaktifkan tombol bawaan Owl */
+.owl-carousel .owl-nav {
+    display: none !important;
+}
+
 
 .parallax-header::before {
     content: "";

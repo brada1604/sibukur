@@ -52,54 +52,46 @@
         <!-- Carousel Start -->
         <div class="parallax-header">
 
-            <!-- Header Start -->
-            <div class="container py-5">
-                <div class="row align-items-center">
-
-                    <!-- Card Teks -->
-                    <div class="col-md-6 mb-4 mb-md-0 order-2 order-md-1">
-                        <div class="card shadow-lg border-0 rounded-4 p-4 h-100 position-relative">
-                            <div id="header-texts">
-                                <?php $no = 0; ?>
-                                <?php foreach ($latest_post->result() as $row): ?>
-                                    <div class="header-text <?php echo $no === 0 ? 'active' : 'd-none'; ?>" data-text-index="<?php echo $no; ?>">
-                                        <span class="badge bg-success mb-2">#<?php echo ucwords($row->category_name); ?></span>
-                                        <h2 class="fw-bold mt-2 mb-3"><?php echo $row->post_title; ?></h2>
-                                        <p>
-                                            <?php 
-                                                $desc = $row->post_description;
-                                                echo strlen($desc) > 150 ? substr($desc, 0, 150) . '...' : $desc;
-                                            ?>
-                                        </p>
-                                        <a href="<?php echo site_url('blog/' . $row->post_slug); ?>" class="btn btn-success mt-3">Selengkapnya ></a>
-                                    </div>
-                                    <?php $no++; ?>
-                                <?php endforeach; ?>
+<!-- Header Start -->
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-lg border-0 rounded-4 p-4 w-100">
+                <!-- Carousel -->
+                <div class="owl-carousel unified-carousel">
+                    <?php foreach ($latest_post->result() as $row): ?>
+                        <div class="row align-items-center g-4 slide-item">
+                            <!-- Gambar di atas saat mobile -->
+                            <div class="col-md-6 px-4 order-1 order-md-2">
+                                <img src="<?= base_url('assets/images/thumb/' . $row->post_image); ?>" alt="<?= $row->post_title; ?>" class="img-fluid rounded shadow w-100" style="max-height: 350px; object-fit: cover;">
                             </div>
 
-                            <!-- Panah Carousel -->
-                            <div class="custom-nav mt-3">
-                                <button class="btn btn-success rounded-circle me-2" id="prevSlide"><i class="bi bi-chevron-left"></i></button>
-                                <button class="btn btn-success rounded-circle" id="nextSlide"><i class="bi bi-chevron-right"></i></button>
+                            <!-- Teks di bawah saat mobile -->
+                            <div class="col-md-6 px-4 order-2 order-md-1">
+                                <span class="badge bg-success mb-2">#<?= ucwords($row->category_name); ?></span>
+                                <h2 class="fw-bold mt-2 mb-3"><?= $row->post_title; ?></h2>
+                                <p>
+                                    <?= strlen($row->post_description) > 150 ? substr($row->post_description, 0, 150) . '...' : $row->post_description; ?>
+                                </p>
+                                <a href="<?= site_url('blog/' . $row->post_slug); ?>" class="btn btn-success mt-3">Selengkapnya ></a>
                             </div>
                         </div>
-                    </div>
+                    <?php endforeach; ?>
+                </div>
 
-                    <!-- Gambar Carousel -->
-                    <div class="col-md-6 order-1 order-md-2">
-                        <div class="owl-carousel header-carousel">
-                            <?php $no = 0; ?>
-                            <?php foreach ($latest_post->result() as $row): ?>
-                                <div class="owl-carousel-item" data-text-index="<?php echo $no++; ?>">
-                                    <img class="img-fluid shadow" src="<?php echo base_url('assets/images/thumb/' . $row->post_image); ?>" alt="<?php echo $row->post_title; ?>">
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-
+                <!-- Tombol Navigasi di dalam card -->
+                <div class="text-end mt-4">
+                    <button class="btn btn-success rounded-circle me-2" id="prevUnified"><i class="bi bi-chevron-left"></i></button>
+                    <button class="btn btn-success rounded-circle" id="nextUnified"><i class="bi bi-chevron-right"></i></button>
                 </div>
             </div>
-            <!-- Header End -->
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+
+
         </div>
         <!-- Carousel End -->
 
