@@ -40,13 +40,13 @@ class Login extends CI_Controller{
              	}	
             }else{
                 $url=base_url('administrator');
-                echo $this->session->set_flashdata('msg','<div class="alert alert-warning" role="alert"><button type="button" class="close" data-dismiss="alert"><i class="fa fa-close"></i></button> Password Salah</div>');
+                echo $this->session->set_flashdata('msg','<div class="alert alert-warning" role="alert"><button type="button" class="btn bi bi-x-circle" aria-label="Close" data-dismiss="alert"></button> Maaf Password Salah</div>');
                 redirect($url);
             }
 
         }else{
         	$url=base_url('administrator');
-            echo $this->session->set_flashdata('msg','<div class="alert alert-warning" role="alert"><button type="button" class="close" data-dismiss="alert"><i class="fa fa-close"></i></button> Username Salah</div>');
+            echo $this->session->set_flashdata('msg','<div class="alert alert-warning" role="alert"><button type="button" class="btn bi bi-x-circle" aria-label="Close" data-dismiss="alert"></button> Maaf Username Salah</div>');
             redirect($url);
         }
 

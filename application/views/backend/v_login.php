@@ -77,7 +77,7 @@
 
             <!-- Flash Message -->
             <?php if($this->session->flashdata('msg')): ?>
-              <div class="alert alert-danger"><?= $this->session->flashdata('msg'); ?></div>
+              <?= $this->session->flashdata('msg'); ?>
             <?php endif; ?>
 
             <!-- Judul -->
